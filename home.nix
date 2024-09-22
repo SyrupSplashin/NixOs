@@ -6,6 +6,7 @@
   imports = [
     ./users/vertex/hyprland.nix
     ./users/vertex/alacritty.nix
+    ./users/vertex/zsh.nix
   ];
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -100,22 +101,22 @@
   #   };
   # };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
-    };
-    history = {
-    size = 10000;
-    path = "${config.xdg.dataHome}/zsh/history";
-    };
-
-  };
+  # programs.zsh = {
+  #   enable = true;
+  #   enableCompletion = true;
+  #   autosuggestion.enable = true;
+  #   syntaxHighlighting.enable = true;
+  #
+  #   shellAliases = {
+  #     ll = "ls -l";
+  #     update = "sudo nixos-rebuild switch";
+  #   };
+  #   history = {
+  #   size = 10000;
+  #   path = "${config.xdg.dataHome}/zsh/history";
+  #   };
+  #
+  # };
 
 
   # This value determines the home Manager release that your
@@ -127,7 +128,4 @@
   # the home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "24.05";
-
-  # Let home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
