@@ -80,6 +80,7 @@
     isNormalUser = true;
     description = "vertex";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
