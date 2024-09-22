@@ -92,11 +92,4 @@
       ];
     };
   };
-  services.hyprpaper = {
-	enable = true;
-	settings = {
-		preload = "./background/Background_Landscape.png";
-		wallpaper = "./backgrounds/Background_Landscape.png";
-	};
-  };
 }

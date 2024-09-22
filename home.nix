@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/vertex";
   imports = [
     ./users/vertex/hyprland.nix
+    ./users/vertex/hyprpaper.nix
     ./users/vertex/alacritty.nix
     ./users/vertex/zsh.nix
   ];
