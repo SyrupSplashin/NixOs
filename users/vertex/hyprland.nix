@@ -6,6 +6,9 @@
       "$terminal" = "alacritty";
       "$mainMod" = "SUPER";
       env = ["XCURSOR_SIZE, 16" "HYPRCURSOR_SIZE,16"];
+      exec-once = [
+	"hyprpaper"
+      ];
       general = {
 	gaps_in = 15;
 	gaps_out = 20;
@@ -88,5 +91,12 @@
 	"$mainMod SHIFT, 0, movetoworkspace, 0"
       ];
     };
+  };
+  services.hyprpaper = {
+	enable = true;
+	settings = {
+		preload = "./background/Background_Landscape.png";
+		wallpaper = "./backgrounds/Background_Landscape.png";
+	};
   };
 }
