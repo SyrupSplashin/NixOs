@@ -151,7 +151,7 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "MesloLG" ];})
+      (nerdfonts.override { fonts = [ "Meslo" ];})
     ];
   };
 }
