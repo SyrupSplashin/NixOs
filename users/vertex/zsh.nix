@@ -3,7 +3,7 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    syntaxHighlightning.enable = true;
+    syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
       theme = "powerlevel10k/powerlevel10k";
