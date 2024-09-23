@@ -86,7 +86,7 @@
       enable = true;
     };
     zsh = {
-      enabble = true;
+      enable = true;
     };
     hyprland = {
       enable = true;

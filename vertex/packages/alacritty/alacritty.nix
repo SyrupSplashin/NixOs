@@ -4,7 +4,7 @@
     settings = {
       import = ["${./base16-default-dark-256.toml}"];
       font = {
-	size = 11.0;
+	size = 13.0;
 	normal = {
 	  family = "MesloLGM Nerd Font Mono";
 	};
