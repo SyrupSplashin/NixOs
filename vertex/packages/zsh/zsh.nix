@@ -8,6 +8,7 @@
       ls = "lsd";
       vim = "nvim";
       ip = "ip -c";
+      cat = "bat";
     };
     plugins = [
       {
