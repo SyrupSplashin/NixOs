@@ -19,7 +19,7 @@
   #   recursive = true;   # link recursively
   #   executable = true;  # make all files executable
   # };
-
+  home.file.".config/rasi/config.rasi".source = ./packages/rofi/config.rasi;
   # encode the file content in nix configuration file directly
   # home.file.".xxx".text = ''
   #     xxx
