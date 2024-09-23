@@ -5,6 +5,7 @@
       monitor = ", prefered, auto, 1";
       "$terminal" = "alacritty";
       "$mainMod" = "SUPER";
+      "$menu" = "rofi -show drun";
       env = ["XCURSOR_SIZE, 16" "HYPRCURSOR_SIZE,16"];
       exec-once = [
 	"hyprpaper"
@@ -60,6 +61,7 @@
 	# General Stuff
 	"$mainMod, RETURN, exec, $terminal"
 	"$mainMod, W, killactive,"
+	"$mainMod, R, exec, $menu"
 	"$mainMod Control, Q, exit,"
 	"$mainMod, V, togglefloating,"
 	# Move Focus HJKL
