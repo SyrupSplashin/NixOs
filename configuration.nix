@@ -9,25 +9,29 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+##################
+### BOOTLOADER ###
+##################
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+##################
+### NETWORKING ###
+##################
+  networking = {
+    hostName = "thinker";
+    networkmanager.enable = true;
+  };
 
-  networking.hostName = "thinker"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
+#####################
+### TIME / LOCALE ###
+#####################
+# Timezone
   time.timeZone = "America/New_York";
 
-  # Select internationalisation properties.
+# Internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -42,120 +46,93 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable flakes
+#############################
+### EXPERIMENTAL FEATURES ###
+#############################
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "dvorak";
+##################
+### USER SETUP ###
+##################
+  users.users = {
+    vertex = {
+	isNormalUser = true;
+	description = "vertex";
+	extraGroups = [ "networkmanager" "wheel" ];
+	shell = pkgs.zsh;
+    };
   };
 
-  # Configure console keymap
-  console.keyMap = "dvorak";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  # User setup
-  users.users.vertex = {
-    isNormalUser = true;
-    description = "vertex";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # System Packages
+################
+### PROGRAMS ###
+################
+# System Packages
   environment.systemPackages = with pkgs; [
 	wget
 	git
 	alacritty
   ];
 
-  # Install firefox.
-  programs.firefox.enable = true;
+# System Modules
+  programs = {
+    firefox = {
+      enable = true;
+    };
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+    git = {
+      enable = true;
+    };
+    zsh = {
+      enabble = true;
+    };
+    hyprland = {
+      enable = true;
+    };
+  };
 
-  # Install neovim
-  programs.neovim = {
+################
+### SERVICES ###
+################
+  services = {
+    printing.enable = true;
+    openssh = {
+      enable = true;
+    };
+    xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+      xkb = {
+	layout = "us";
+	variant = "dvorak";
+      };
+    };
+    pipewire = {
 	enable = true;
-	defaultEditor = true;
+	alsa.enable = true;
+	alsa.support32Bit = true;
+	pulse.enable = true;
+    };
   };
 
-  # Install git
-  programs.git = {
-	enable = true;
-  };
-
-  # Install zsh
-  programs.zsh.enable = true;
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
-  
-  ##################
-  ###  Hyprland  ###
-  ##################
-  
-  # Cachix for Hyprland
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
-
-  programs.hyprland = {
-  	enable = true;
-    	# set the flake package
-	#package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-	# make sure to also set the portal package, so that they are in sync
-	#portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
-  #############
-  ### FONTS ###
-  #############
+####################
+### SYSTEM FONTS ###
+####################
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
       (nerdfonts.override { fonts = [ "Meslo" ];})
     ];
   };
+
+###########
+### ETC ###
+###########
+  system.stateVersion = "24.05";
+  console.keyMap = "dvorak";
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  nixpkgs.config.allowUnfree = true;
 }
