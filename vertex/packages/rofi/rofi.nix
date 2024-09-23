@@ -9,10 +9,6 @@
       drun-match-fields = "name,generic,exec,categories,keywords";
       drun-display-format = "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
       drun-show-actions = false;
-      drun = {
-        parse-user = true;
-        parse-system = true;
-      };
       display-drun = "Apps";
     };
   };
