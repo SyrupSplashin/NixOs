@@ -10,6 +10,10 @@
       exec-once = [
 	"hyprpaper"
       ];
+      layerrule = [
+	"blur,rofi"
+	"blur,waybar"
+      ];
       general = {
 	gaps_in = 15;
 	gaps_out = 20;
