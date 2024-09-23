@@ -23,7 +23,7 @@
 	  home-manager.nixosModules.home-manager {
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
-	  home-manager.users.vertex = import ./home.nix;
+	  home-manager.users.vertex = import ./vertex/home.nix;
 	  }
         ];
       };
