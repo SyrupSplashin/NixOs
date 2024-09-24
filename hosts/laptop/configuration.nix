@@ -71,6 +71,7 @@
 	wget
 	git
 	alacritty
+	wl-copy
   ];
 
 # System Modules

@@ -150,6 +150,10 @@
 ###########
   system.stateVersion = "24.05";
   hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
   nixpkgs.config.allowUnfree = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+    pam.services.hyprlock = {};
+  };
 }
