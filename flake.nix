@@ -27,6 +27,18 @@
 	  }
         ];
       };
+      octopamine = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linx";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/desktop/configuration.nix
+          home-manager.nixosModules.home-manager{
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.vertex = import ./hosts/desktop/vertex/home.nix; 
+          }
+        ];
+      };
     };
   };
 }

@@ -3,8 +3,9 @@
     enable = true;
     settings = {
       monitor = [
-	"DP-2, prefreed, 0x0, 1"
-	"HDMI-A-1, 1080x0920@60, auto-lef, 1, transform, 1"
+	"DP-2,preferred,0x0,1"
+	"HDMI-A-1,1080x0920@60,auto-left,1,transform,1"
+	"Unknown-1,disabled"
       ];
       "$terminal" = "alacritty";
       "$mainMod" = "SUPER";
@@ -75,7 +76,7 @@
 	follow_mouse = 1;
       };
       cursor = {
-	no_hardware_cursors = true;
+	no_hardware_cursors = false;
       };
       workspace = [
 	"1, monitor:DP-2, persistent:true, default:true"
@@ -87,7 +88,7 @@
 	"7, monitor:HDMI-A-1, persistent:true"
 	"8, monitor:HDMI-A-1, persistent:true"
 	"9, monitor:HDMI-A-1, persistent:true"
-	"10, monitor:HDMI-A-1, persistent:true, default:true"
+	"0, monitor:HDMI-A-1, persistent:true, default:true"
       ];
       bind = [
 	# General Stuff

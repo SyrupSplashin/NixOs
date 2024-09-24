@@ -24,7 +24,6 @@
     enable = true;
   };
 
-  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -120,6 +119,7 @@
     };
     xserver = {
       enable = true;
+      videoDrivers = ["nvidia"];
       displayManager.gdm.enable = true;
       xkb = {
 	layout = "us";
