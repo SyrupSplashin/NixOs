@@ -141,6 +141,8 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       (nerdfonts.override { fonts = [ "Meslo" ];})
+      fira
+      fira-code
     ];
   };
 

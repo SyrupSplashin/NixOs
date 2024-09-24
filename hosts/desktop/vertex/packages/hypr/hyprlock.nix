@@ -36,7 +36,7 @@
 	check_color = "rgb(204, 136, 34)";
 	placeholder_text = "<i>Input Password...</i>";
 	hide_input = false;
-	position = 0, -50;
+	position = "0, -50";
 	halign = "center";
 	valign = "center";
       };
