@@ -20,6 +20,7 @@
       ];
       exec-once = [
 	"hyprpaper"
+	"waybar"
 	"dunst"
       ];
       layerrule = [
