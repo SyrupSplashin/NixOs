@@ -9,6 +9,7 @@
       env = ["XCURSOR_SIZE, 16" "HYPRCURSOR_SIZE,16"];
       exec-once = [
 	"hyprpaper"
+	"waybar"
 	"dunst"
       ];
       layerrule = [
@@ -16,8 +17,8 @@
 	"blur,waybar"
       ];
       general = {
-	gaps_in = 15;
-	gaps_out = 20;
+	gaps_in = 5;
+	gaps_out = 10;
 	border_size = 2;
 	"col.active_border" = "rgba(7cafc2ee) rgba(455054ee) 45deg";
 	"col.inactive_border" = "rgba(595959aa)";

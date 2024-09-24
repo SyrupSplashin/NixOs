@@ -2,13 +2,14 @@
   programs.waybar = {
     enable = true;
     style = ./style.css;
-    settings = {
+    settings = [
+      {
       output = "eDP-1";
       layer = "top";
       height = 32;
-      margin-top = 20;
-      margin-right = 20;
-      margin-left = 20;
+      margin-top = 10;
+      margin-right = 10;
+      margin-left = 10;
       spacing = 0;
 # Modules
       modules-left = [
@@ -19,10 +20,10 @@
         "hyprland/window"
       ];
       modules-right = [
-        "pulseaudio",
-        "network",
-        "clock",
-        "tray",
+        "pulseaudio"
+        "network"
+        "clock"
+        "tray"
         "idle_inhibitor"
       ];
 # Module Config
@@ -44,10 +45,10 @@
       "clock" = {
         format = "{:%I:%M %p}";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt = "{:%Y-%m-%d}"
+        format-alt = "{:%Y-%m-%d}";
       };
       "network" = {
-        interface = "wlp4s0";
+        interface = "wlp61s0";
         format-wifi = "{essid} ({signalStrength}%) ";
         format-ethernet = "{ipaddr}/{cidr} ";
         tooltip-format = "{ifname} via {gwaddr} ";
@@ -60,13 +61,14 @@
         format-muted = " ";
         format-icons = {
           headphone = "";
-          default = ["", "", ""];
+          default = ["" "" ""];
         };
         on-click = "pavucontrol";
       };
       "custom/logo" = {
         format = "";
       };
-    };
+    }
+    ];
   };
 }
