@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ../../hardware-configuration.nix
     ];
 ##################
 ### BOOTLOADER ###
@@ -124,6 +124,8 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       (nerdfonts.override { fonts = [ "Meslo" ];})
+      fira
+      fira-code
     ];
   };
 
@@ -135,4 +137,8 @@
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   nixpkgs.config.allowUnfree = true;
+  security = {
+    polkit.enable = true;
+    pam.services.hyprlock = {};
+  };
 }

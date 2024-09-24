@@ -17,13 +17,13 @@
         system = "x86_64-linux";
 	specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./hosts/laptop/configuration.nix
 	  
 	  # Home-Manager Conf
 	  home-manager.nixosModules.home-manager {
 	  home-manager.useGlobalPkgs = true;
 	  home-manager.useUserPackages = true;
-	  home-manager.users.vertex = import ./vertex/home.nix;
+	  home-manager.users.vertex = import ./hosts/laptop/vertex/home.nix;
 	  }
         ];
       };

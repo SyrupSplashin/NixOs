@@ -4,11 +4,7 @@
   home.username = "vertex";
   home.homeDirectory = "/home/vertex";
   imports = [
-    ./packages/zsh/zsh.nix
-    ./packages/hypr/hyprland.nix
-    ./packages/hypr/hyprpaper.nix
-    ./packages/alacritty/alacritty.nix
-    ./packages/rofi/rofi.nix
+    ./packages
   ];
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
