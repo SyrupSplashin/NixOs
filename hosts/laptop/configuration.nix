@@ -71,7 +71,7 @@
 	wget
 	git
 	alacritty
-	wl-copy
+	wl-clipboard
   ];
 
 # System Modules
