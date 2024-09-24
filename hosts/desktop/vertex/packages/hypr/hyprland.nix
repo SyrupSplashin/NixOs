@@ -88,7 +88,7 @@
 	"7, monitor:HDMI-A-1, persistent:true"
 	"8, monitor:HDMI-A-1, persistent:true"
 	"9, monitor:HDMI-A-1, persistent:true"
-	"0, monitor:HDMI-A-1, persistent:true, default:true"
+	"10, monitor:HDMI-A-1, persistent:true, default:true"
       ];
       bind = [
 	# General Stuff
@@ -112,7 +112,7 @@
 	"$mainMod, 7, workspace, 7"
 	"$mainMod, 8, workspace, 8"
 	"$mainMod, 9, workspace, 9"
-	"$mainMod, 0, workspace, 0"
+	"$mainMod, 0, workspace, 10"
 	# Move active window to workspace
 	"$mainMod SHIFT, 1, movetoworkspace, 1"
 	"$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -123,7 +123,7 @@
 	"$mainMod SHIFT, 7, movetoworkspace, 7"
 	"$mainMod SHIFT, 8, movetoworkspace, 8"
 	"$mainMod SHIFT, 9, movetoworkspace, 9"
-	"$mainMod SHIFT, 0, movetoworkspace, 0"
+	"$mainMod SHIFT, 0, movetoworkspace, 10"
       ];
     };
   };

@@ -86,6 +86,7 @@
 	wget
 	git
 	alacritty
+	wl-clipboard
   ];
 
 # System Modules
@@ -122,7 +123,6 @@
       displayManager.gdm.enable = true;
       xkb = {
 	layout = "us";
-	variant = "dvorak";
       };
     };
     pipewire = {
