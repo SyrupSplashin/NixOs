@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports =
@@ -26,7 +26,6 @@
 
 
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
@@ -150,7 +149,6 @@
 ### ETC ###
 ###########
   system.stateVersion = "24.05";
-  console.keyMap = "dvorak";
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   nixpkgs.config.allowUnfree = true;
