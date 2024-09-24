@@ -13,11 +13,6 @@
 	  on-timeout = "brightnessctl -s set 10"; # dims display
 	  on-resume = "brightnessctl -r";
 	}
-	{
-	  timeout = "150";
-	  on-timeout = "brightnessctl -sd rgb:kbd_backlight set 0"; # toggles keyboard backlight
-	  on-resume = "brightnessctl -rd rgb:kbd_backlight";
-	}
         {
 	  timeout = "300"; # 5mins
 	  on-timeout = "loginctl lock-session";
