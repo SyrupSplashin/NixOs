@@ -60,7 +60,7 @@
     gnutar
     gawk
     zstd
-    gnupg # OpenPGP
+#    gnupg # OpenPGP
     dunst # Notif daemon
 
     # system tools
