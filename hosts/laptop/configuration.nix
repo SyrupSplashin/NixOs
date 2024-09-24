@@ -72,6 +72,7 @@
 	git
 	alacritty
 	wl-clipboard
+	brightnessctl
   ];
 
 # System Modules
