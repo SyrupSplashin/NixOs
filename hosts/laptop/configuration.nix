@@ -7,7 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ../../hardware-configuration.nix
+      ./hardware-configuration-laptop.nix
+      ../../common/syspackages.nix
     ];
 ##################
 ### BOOTLOADER ###
@@ -63,35 +64,16 @@
     };
   };
 
-################
-### PROGRAMS ###
-################
+##############################
+### LAPTOP SYSTEM PROGRAMS ###
+##############################
 # System Packages
   environment.systemPackages = with pkgs; [
-	wget
-	git
-	alacritty
-	wl-copy
+	brightnessctl
   ];
 
 # System Modules
   programs = {
-    firefox = {
-      enable = true;
-    };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
-    git = {
-      enable = true;
-    };
-    zsh = {
-      enable = true;
-    };
-    hyprland = {
-      enable = true;
-    };
   };
 
 ################

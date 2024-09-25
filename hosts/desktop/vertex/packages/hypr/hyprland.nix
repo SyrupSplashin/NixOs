@@ -67,12 +67,11 @@
 	new_status = "slave";
       };
       misc = {
-	force_default_wallpaper = 1;
-	disable_hyprland_logo = false;
+	force_default_wallpaper = 0;
+	disable_hyprland_logo = true;
       };
       input = {
 	kb_layout = "us";
-	kb_variant = "dvorak";
 	follow_mouse = 1;
       };
       cursor = {
@@ -96,6 +95,7 @@
 	"$mainMod, W, killactive,"
 	"$mainMod, R, exec, $menu"
 	"$mainMod Control, Q, exit,"
+	"$mainMod Control, L, exec, hyprlock"
 	"$mainMod, V, togglefloating,"
 	# Move Focus HJKL
 	"$mainMod, h, movefocus, l"
