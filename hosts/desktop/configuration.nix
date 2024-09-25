@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration-desktop.nix
+      ../../common/syspackages.nix
     ];
 ##################
 ### BOOTLOADER ###
@@ -78,35 +79,15 @@
     };
   };
 
-################
-### PROGRAMS ###
-################
+########################
+### DESKTOP PROGRAMS ###
+########################
 # System Packages
   environment.systemPackages = with pkgs; [
-	wget
-	git
-	alacritty
-	wl-clipboard
   ];
 
-# System Modules
+# Desktop System Modules
   programs = {
-    firefox = {
-      enable = true;
-    };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
-    git = {
-      enable = true;
-    };
-    zsh = {
-      enable = true;
-    };
-    hyprland = {
-      enable = true;
-    };
   };
 
 ################
