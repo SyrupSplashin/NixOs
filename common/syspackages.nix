@@ -9,6 +9,7 @@
 	clang
 	clang-tools
 	cmake
+	zathura
   ];
 
 # System Modules

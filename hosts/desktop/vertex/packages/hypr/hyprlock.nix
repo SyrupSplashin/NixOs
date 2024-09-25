@@ -36,7 +36,7 @@
 	check_color = "rgb(204, 136, 34)";
 	placeholder_text = "<i>Input Password...</i>";
 	hide_input = false;
-	position = "0, -50";
+	position = "0, -40";
 	halign = "center";
 	valign = "center";
       };
@@ -46,7 +46,7 @@
 	color = "rgba(200, 200, 200, 1.0)";
 	font_size = 55;
 	font_family = "Fira Semibold ";
-	position = "0, 50";
+	position = "0, 40";
 	halign = "center";
 	valign = "center";
 	shadow_passes = 5;

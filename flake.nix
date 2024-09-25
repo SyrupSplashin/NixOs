@@ -3,10 +3,10 @@
   description = "the simplest flake for nixos-rebuild";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 #    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
