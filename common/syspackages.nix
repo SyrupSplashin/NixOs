@@ -6,6 +6,7 @@
 	alacritty
 	wl-clipboard
 	# C tools
+	clang
 	clang-tools
 	cmake
   ];

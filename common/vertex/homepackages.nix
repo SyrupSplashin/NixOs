@@ -1,4 +1,7 @@
 { config, pkgs, ...}: {
+  imports = [
+    ./packages
+  ];
 # User Packages
   home.packages = with pkgs; [
     #applications
@@ -10,7 +13,6 @@
     # utils
     ripgrep # recursively searches directories for a regex pattern
     lsd # A modern replacement for ‘ls’
-    fzf # A command-line fuzzy finder
     bat # cat clone with syntax highlighting
 
     # networking tools
@@ -43,15 +45,20 @@
   ];
 
 # User Modules
-  programs.git = {
-    enable = true;
-    userName = "SyrupSplashin";
-    userEmail = "vertex@syrupsplash.in";
-  };
-
-  programs.zoxide = {
-    enable= true;
-    enableZshIntegration = true;
-    options = ["--cmd cd"];
+  programs = {
+    git = {
+      enable = true;
+      userName = "SyrupSplashin";
+      userEmail = "vertex@syrupsplash.in";
+    };
+    zoxide = {
+      enable= true;
+      enableZshIntegration = true;
+      options = ["--cmd cd"];
+    };
+    fzf = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
 }

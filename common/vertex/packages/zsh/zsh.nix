@@ -21,6 +21,10 @@
         src = ./config;
         file = "p10k.zsh";
       }
+      { 
+        name = "zsh-syntax-highlighting";
+        src = pkgs.zsh-syntax-highlighting;
+      }
     ];
   };
 }
