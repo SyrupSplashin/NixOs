@@ -6,7 +6,7 @@
       "$terminal" = "alacritty";
       "$mainMod" = "SUPER";
       "$menu" = "rofi -show drun";
-      env = ["XCURSOR_SIZE, 16" "HYPRCURSOR_SIZE,16"];
+      env = [""];
       exec-once = [
 	"hyprpaper"
 	"waybar"

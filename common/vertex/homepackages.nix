@@ -2,6 +2,21 @@
   imports = [
     ./packages
   ];
+  home.pointerCursor = {
+    gtk.enable = true;
+    # x11.enable = true;
+    name = "BreezeX-RosePine-Linux";
+    package = pkgs.rose-pine-cursor;
+    size = 16;
+  };
+  gtk = {
+    enable = true;
+    cursorTheme = {
+      name = "BreezeX-RosePine-Linux";
+      package = pkgs.rose-pine-cursor;
+      size = 16;
+    };
+  };
 # User Packages
   home.packages = with pkgs; [
     #applications

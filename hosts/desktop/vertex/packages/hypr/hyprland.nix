@@ -4,15 +4,13 @@
     settings = {
       monitor = [
 	"DP-2,preferred,0x0,1"
-	"HDMI-A-1,1080x0920@60,auto-left,1,transform,1"
+	"HDMI-A-1,preferred,auto-left,1,transform,1"
 	"Unknown-1,disabled"
       ];
       "$terminal" = "alacritty";
       "$mainMod" = "SUPER";
       "$menu" = "rofi -show drun";
       env = [
-	"XCURSOR_SIZE, 16"
-	"HYPRCURSOR_SIZE,16"
 	"LIBVA_DRIVER_NAME,nvidia"
 	"XDG_SESSION_TYPE,wayland"
 	"GBM_BACKEND,nvidia-drm"
@@ -73,9 +71,6 @@
       input = {
 	kb_layout = "us";
 	follow_mouse = 1;
-      };
-      cursor = {
-	no_hardware_cursors = false;
       };
       workspace = [
 	"1, monitor:DP-2, persistent:true, default:true"
