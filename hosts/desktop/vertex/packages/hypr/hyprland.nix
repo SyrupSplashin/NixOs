@@ -34,7 +34,7 @@
 	"col.inactive_border" = "rgba(595959aa)";
 	resize_on_border = true;
 	allow_tearing = false;
-	layout = "master";
+	layout = "dwindle";
       };
       decoration = {
 	rounding = 0;
@@ -90,13 +90,18 @@
 	"$mainMod, W, killactive,"
 	"$mainMod, R, exec, $menu"
 	"$mainMod Control, Q, exit,"
-	"$mainMod Control, L, exec, hyprlock"
+	"$mainMod Control, grave, exec, hyprlock"
 	"$mainMod, V, togglefloating,"
 	# Move Focus HJKL
 	"$mainMod, h, movefocus, l"
 	"$mainMod, l, movefocus, r"
 	"$mainMod, k, movefocus, u"
 	"$mainMod, j, movefocus, d"
+	# Move Window HJKL
+	"$mainMod Shift, h, movewindow, l"
+	"$mainMod Shift, l, movewindow, r"
+	"$mainMod Shift, k, movewindow, u"
+	"$mainMod Shift, j, movewindow, d"
 	# Switch Workspaces
 	"$mainMod, 1, workspace, 1"
 	"$mainMod, 2, workspace, 2"
@@ -119,6 +124,18 @@
 	"$mainMod SHIFT, 8, movetoworkspace, 8"
 	"$mainMod SHIFT, 9, movetoworkspace, 9"
 	"$mainMod SHIFT, 0, movetoworkspace, 10"
+      ];
+      bindm = [
+	# Move/Resize with Mouse
+	"$mainMod, mouse:272, movewindow"
+	"$mainMod, mouse:273, resizewindow"
+      ];
+      binde = [
+	# Resize Window HJKL
+	"$mainMod Control, h, resizeactive, -10 0"
+	"$mainMod Control, l, resizeactive, 10 0"
+	"$mainMod Control, k, resizeactive, 0 -10"
+	"$mainMod Control, j, resizeactive, 0 10"
       ];
     };
   };
