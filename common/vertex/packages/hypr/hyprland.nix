@@ -7,6 +7,7 @@
 	"hyprpaper"
 	"waybar"
 	"dunst"
+	"wl-paste --type text --watch cliphist store"
       ];
       layerrule = [
 	"blur,rofi"
@@ -37,7 +38,8 @@
 	"$mainMod, R, exec, $menu"
 	"$mainMod Control, Q, exit,"
 	"$mainMod Control, grave, exec, hyprlock"
-	"$mainMod, V, togglefloating,"
+	"$mainMod, F, togglefloating,"
+	"$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 	# Move Focus HJKL
 	"$mainMod, h, movefocus, l"
 	"$mainMod, l, movefocus, r"

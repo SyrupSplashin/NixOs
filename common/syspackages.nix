@@ -10,6 +10,7 @@
 	clang-tools
 	cmake
 	zathura
+	cliphist
   ];
 
 # System Modules

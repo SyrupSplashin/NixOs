@@ -24,7 +24,7 @@
     zip
     xz
     unzip
-
+    anki-bin
     # utils
     ripgrep # recursively searches directories for a regex pattern
     lsd # A modern replacement for ‘ls’
@@ -65,11 +65,6 @@
       enable = true;
       userName = "SyrupSplashin";
       userEmail = "vertex@syrupsplash.in";
-    };
-    zoxide = {
-      enable= true;
-      enableZshIntegration = true;
-      options = ["--cmd cd"];
     };
     fzf = {
       enable = true;

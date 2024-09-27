@@ -18,21 +18,27 @@
     efi.canTouchEfiVariables = true;
   };
 
-##############
-### NVIDIA ###
-##############
-  hardware.graphics = {
-    enable = true;
+################
+### HARDWARE ###
+################
+
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    graphics = {
+      enable = true;
+    };
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = true;
+      powerManagement.finegrained = false;
+      open = false;
+      nvidiaSettings = true;
+    };
   };
 
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = false;
-    nvidiaSettings = true;
-  };
 ##################
 ### NETWORKING ###
 ##################
@@ -111,6 +117,9 @@
 	alsa.enable = true;
 	alsa.support32Bit = true;
 	pulse.enable = true;
+    };
+    blueman = {
+      enable = true;
     };
   };
 
