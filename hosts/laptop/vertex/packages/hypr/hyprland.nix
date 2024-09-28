@@ -5,7 +5,7 @@
       "$terminal" = "alacritty";
       "$mainMod" = "SUPER";
       "$menu" = "rofi -show drun";
-      env = [""];
+      # env = [""];
       general = {
 	gaps_in = 5;
 	gaps_out = 10;
@@ -35,6 +35,18 @@
 	kb_variant = "dvorak";
 	follow_mouse = 1;
       };
+      workspace = [ 
+	"1, persistent:true, default:true"
+	"2, persistent:true"
+	"3, persistent:true"
+	"4, persistent:true"
+	"5, persistent:true"
+	"6, persistent:true"
+	"7, persistent:true"
+	"8, persistent:true"
+	"9, persistent:true"
+	"10 persistent:true"
+      ];
     };
   };
 }
