@@ -4,14 +4,15 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-#    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    syrupnvim.url = "git+https://github.com/SyrupSplashin/nix.nvim.git?ref=main";
+#   hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, syrupnvim, ... }@inputs: {
     nixosConfigurations = {
       thinker = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

@@ -1,6 +1,11 @@
 { config, pkgs, lib, inputs, ...}: {
+    nixpkgs.overlays = [
+      inputs.syrupnvim.overlays.default
+    ];
 # System Packages
   environment.systemPackages = with pkgs; [
+  alsa-utils # utilities for ALSA
+  playerctl # utility / lib for controlling media
 	wget
 	git
 	alacritty
@@ -11,6 +16,8 @@
 	cmake
 	zathura
 	cliphist
+	nvim-pkg # custom nvim config
+  grimblast # hyprland screenshot utility
   ];
 
 # System Modules
@@ -18,10 +25,10 @@
     firefox = {
       enable = true;
     };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
+#    neovim = {
+#      enable = true;
+#      defaultEditor = true;
+#    };
     git = {
       enable = true;
     };

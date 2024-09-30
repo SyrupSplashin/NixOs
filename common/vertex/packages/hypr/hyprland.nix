@@ -40,6 +40,7 @@
 	"$mainMod Control, grave, exec, hyprlock"
 	"$mainMod, F, togglefloating,"
 	"$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+  ", Print, exec, grimblast copy area"
 	# Move Focus HJKL
 	"$mainMod, h, movefocus, l"
 	"$mainMod, l, movefocus, r"
@@ -72,6 +73,15 @@
 	"$mainMod SHIFT, 8, movetoworkspace, 8"
 	"$mainMod SHIFT, 9, movetoworkspace, 9"
 	"$mainMod SHIFT, 0, movetoworkspace, 10"
+  # Media / volume control
+  ",XF86AudioRaiseVolume, exec, amixer set 'Master' 5%+"
+  ",XF86AudioLowerVolume, exec, amixer set 'Master' 5%-"
+  ",XF86AudioMuteVolume, exec, amixer set 'Master' toggle"
+  ",XF86AudioNext, exec, playerctl next"
+  ",XF86AudioPrev, exec, playerctl previous"
+  ",XF86AudioPlay, exec, playerctl play-pause"
+  ",XF86AudioPause, exec, playerctl play-pause"
+
       ];
       bindm = [
 	# Move/Resize with Mouse
