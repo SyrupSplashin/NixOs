@@ -19,13 +19,12 @@
 	specialArgs = { inherit inputs; };
         modules = [
           ./hosts/laptop/configuration.nix
-	  
-	  # Home-Manager Conf
-	  home-manager.nixosModules.home-manager {
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.vertex = import ./hosts/laptop/vertex/home.nix;
-	  }
+          # Home-Manager Conf
+          home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.vertex = import ./hosts/laptop/vertex/home.nix;
+          }
         ];
       };
       octopamine = nixpkgs.lib.nixosSystem {
