@@ -1,14 +1,10 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, ... }:
+{
   imports = [
     ./packages
   ];
-  home.pointerCursor = {
-    gtk.enable = true;
-    # x11.enable = true;
-    name = "BreezeX-RosePine-Linux";
-    package = pkgs.rose-pine-cursor;
-    size = 16;
-  };
+
+  #CursorTheme
   gtk = {
     enable = true;
     cursorTheme = {
@@ -17,49 +13,61 @@
       size = 16;
     };
   };
-# User Packages
-  home.packages = with pkgs; [
-    #applications
-    discord
-    zip
-    xz
-    unzip
-    anki-bin
-    # utils
-    ripgrep # recursively searches directories for a regex pattern
-    lsd # A modern replacement for ‘ls’
-    bat # cat clone with syntax highlighting
+  home = {
+    sessionVariables = {
+      ANKI_WAYLAND = 1;
+    };
+    pointerCursor = {
+      gtk.enable = true;
+      # x11.enable = true;
+      name = "BreezeX-RosePine-Linux";
+      package = pkgs.rose-pine-cursor;
+      size = 16;
+    };
+    packages = with pkgs; [
 
-    # networking tools
-    mtr # A network diagnostic tool
-    iperf3 # Network Benchmark
-    dnsutils  # `dig` + `nslookup`
-    ldns # replacement of `dig`, it provide the command `drill`
-    aria2 # A lightweight multi-protocol & multi-source command-line download utility
-    socat # replacement of openbsd-netcat
-    nmap # A utility for network discovery and security auditing
-    ipcalc  # it is a calculator for the IPv4/v6 addresses
+      #applications
+      discord
+      zip
+      xz
+      unzip
+      anki-bin
+      # utils
+      ripgrep # recursively searches directories for a regex pattern
+      lsd # A modern replacement for ‘ls’
+      bat # cat clone with syntax highlighting
 
-    # misc
-    file
-    which
-    tree
-    gnused
-    gnutar
-    gawk
-    zstd
-#    gnupg # OpenPGP
-    dunst # Notif daemon
+      # networking tools
+      mtr # A network diagnostic tool
+      iperf3 # Network Benchmark
+      dnsutils # `dig` + `nslookup`
+      ldns # replacement of `dig`, it provide the command `drill`
+      aria2 # A lightweight multi-protocol & multi-source command-line download utility
+      socat # replacement of openbsd-netcat
+      nmap # A utility for network discovery and security auditing
+      ipcalc # it is a calculator for the IPv4/v6 addresses
 
-    # system tools
-    sysstat
-    lm_sensors # for `sensors` command
-    ethtool
-    pciutils # lspci
-    usbutils # lsusb
-  ];
+      # misc
+      file
+      which
+      tree
+      gnused
+      gnutar
+      gawk
+      zstd
+      #    gnupg # OpenPGP
+      dunst # Notif daemon
 
-# User Modules
+      # system tools
+      sysstat
+      lm_sensors # for `sensors` command
+      ethtool
+      pciutils # lspci
+      usbutils # lsusb
+
+    ];
+  };
+  # User Modules
   programs = {
     git = {
       enable = true;
@@ -69,6 +77,14 @@
     fzf = {
       enable = true;
       enableZshIntegration = true;
+    };
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "nord";
+        theme_background = false;
+        rounded_corners = false;
+      };
     };
   };
 }
