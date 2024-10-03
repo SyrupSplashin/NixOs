@@ -13,12 +13,6 @@
           set -g @catppuccin_window_right_separator "█ "
           set -g @catppuccin_status_left_separator "█"
           set -g @catppuccin_status_right_separator "█"
-          set -g @catppuccin_date_time_text "%Y-%m-%d %H:%M:%S"
-          set -g  status-right "#{E:@catppuccin_status_application}"
-          set -ag status-right "#{E:@catppuccin_status_session}"
-          set -ag status-right "#{E:@catppuccin_status_user}"
-          set -ag status-right "#{E:@catppuccin_status_host}"
-          set -ag status-right "#{E:@catppuccin_status_date_time}"
         '';
       }
     ];
