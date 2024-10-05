@@ -2,25 +2,24 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration-desktop.nix
-      ../../common/syspackages.nix
-    ];
-##################
-### BOOTLOADER ###
-##################
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration-desktop.nix
+    ../../common/sysconfiguration.nix
+  ];
 
-################
-### HARDWARE ###
-################
+  ################
+  ### HARDWARE ###
+  ################
 
   hardware = {
     bluetooth = {
@@ -39,66 +38,31 @@
     };
   };
 
-##################
-### NETWORKING ###
-##################
+  ##################
+  ### NETWORKING ###
+  ##################
   networking = {
     hostName = "octopamine";
     networkmanager.enable = true;
   };
 
-#####################
-### TIME / LOCALE ###
-#####################
-# Timezone
-  time.timeZone = "America/New_York";
+  ########################
+  ### DESKTOP PROGRAMS ###
+  ########################
+  # System Packages
+  environment.systemPackages =
+    with pkgs;
+    [
+    ];
 
-# Internationalisation properties
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-#############################
-### EXPERIMENTAL FEATURES ###
-#############################
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-##################
-### USER SETUP ###
-##################
-  users.users = {
-    vertex = {
-	isNormalUser = true;
-	description = "vertex";
-	extraGroups = [ "networkmanager" "wheel" ];
-	shell = pkgs.zsh;
+  # Desktop System Modules
+  programs =
+    {
     };
-  };
 
-########################
-### DESKTOP PROGRAMS ###
-########################
-# System Packages
-  environment.systemPackages = with pkgs; [
-  ];
-
-# Desktop System Modules
-  programs = {
-  };
-
-################
-### SERVICES ###
-################
+  ################
+  ### SERVICES ###
+  ################
   services = {
     printing.enable = true;
     openssh = {
@@ -106,44 +70,20 @@
     };
     xserver = {
       enable = true;
-      videoDrivers = ["nvidia"];
+      videoDrivers = [ "nvidia" ];
       displayManager.gdm.enable = true;
       xkb = {
-	layout = "us";
+        layout = "us";
       };
     };
     pipewire = {
-	enable = true;
-	alsa.enable = true;
-	alsa.support32Bit = true;
-	pulse.enable = true;
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
     };
     blueman = {
       enable = true;
     };
-  };
-
-####################
-### SYSTEM FONTS ###
-####################
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "Meslo" ];})
-      fira
-      fira-code
-    ];
-  };
-
-###########
-### ETC ###
-###########
-  system.stateVersion = "24.05";
-  hardware.pulseaudio.enable = false;
-  nixpkgs.config.allowUnfree = true;
-  security = {
-    rtkit.enable = true;
-    polkit.enable = true;
-    pam.services.hyprlock = {};
   };
 }

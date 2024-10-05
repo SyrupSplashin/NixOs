@@ -149,11 +149,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1727927623,
-        "narHash": "sha256-rGErTejkYvbnOw/lRKaHL2m5kYK1csfwguwuCsR7h1g=",
+        "lastModified": 1727929779,
+        "narHash": "sha256-mBtA0dba2nmxrEGgEKnDueQyxEcTHLzcFAMctn0pEGc=",
         "ref": "main",
-        "rev": "768364e85ba4632895db72df419ac7e4d76d0881",
-        "revCount": 10,
+        "rev": "6d0441d7bbec9f45c0d4f54f6f6abb12b1861449",
+        "revCount": 11,
         "type": "git",
         "url": "https://github.com/SyrupSplashin/nix.nvim.git"
       },

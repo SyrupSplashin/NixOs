@@ -2,83 +2,43 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration-laptop.nix
-      ../../common/syspackages.nix
-    ];
-##################
-### BOOTLOADER ###
-##################
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-
-##################
-### NETWORKING ###
-##################
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration-laptop.nix
+    ../../common/sysconfiguration.nix
+  ];
+  ##################
+  ### NETWORKING ###
+  ##################
   networking = {
     hostName = "thinker";
     networkmanager.enable = true;
   };
 
-#####################
-### TIME / LOCALE ###
-#####################
-# Timezone
-  time.timeZone = "America/New_York";
-
-# Internationalisation properties
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-#############################
-### EXPERIMENTAL FEATURES ###
-#############################
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-##################
-### USER SETUP ###
-##################
-  users.users = {
-    vertex = {
-	isNormalUser = true;
-	description = "vertex";
-	extraGroups = [ "networkmanager" "wheel" ];
-	shell = pkgs.zsh;
-    };
-  };
-
-##############################
-### LAPTOP SYSTEM PROGRAMS ###
-##############################
-# System Packages
+  ##############################
+  ### LAPTOP SYSTEM PROGRAMS ###
+  ##############################
+  # System Packages
   environment.systemPackages = with pkgs; [
-	brightnessctl
+    brightnessctl
   ];
 
-# System Modules
-  programs = {
-  };
+  # System Modules
+  programs =
+    {
+    };
 
-################
-### SERVICES ###
-################
+  ################
+  ### SERVICES ###
+  ################
   services = {
     printing.enable = true;
     openssh = {
@@ -88,40 +48,20 @@
       enable = true;
       displayManager.gdm.enable = true;
       xkb = {
-	layout = "us";
-	variant = "dvorak";
+        layout = "us";
+        variant = "dvorak";
       };
     };
     pipewire = {
-	enable = true;
-	alsa.enable = true;
-	alsa.support32Bit = true;
-	pulse.enable = true;
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
     };
   };
 
-####################
-### SYSTEM FONTS ###
-####################
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "Meslo" ];})
-      fira
-      fira-code
-    ];
-  };
-
-###########
-### ETC ###
-###########
-  system.stateVersion = "24.05";
+  ###########
+  ### ETC ###
+  ###########
   console.keyMap = "dvorak";
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  nixpkgs.config.allowUnfree = true;
-  security = {
-    polkit.enable = true;
-    pam.services.hyprlock = {};
-  };
 }
