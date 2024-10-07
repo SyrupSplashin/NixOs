@@ -2,7 +2,7 @@
   wayland.windowManager.hyprland = {
     settings = {
       monitor = ", prefered, auto, 1";
-      "$terminal" = "alacritty";
+      "$terminal" = "kitty";
       "$mainMod" = "SUPER";
       "$menu" = "rofi -show drun";
       # env = [""];

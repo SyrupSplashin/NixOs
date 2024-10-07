@@ -1,10 +1,11 @@
 { config, pkgs, ...}: {
   imports = [
     ./hypr
-    ./zsh
     ./zathura
     ./rofi
-    ./alacritty
+    ./kitty
+    ./starship
+    ./zsh
     ./tmux
   ];
 }

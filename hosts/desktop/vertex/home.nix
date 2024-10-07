@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/vertex";
   imports = [
     ./packages
-    ../../../common/vertex/homepackages.nix
+    ../../../common/vertex/homeconfiguration.nix
   ];
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;

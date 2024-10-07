@@ -69,6 +69,7 @@
     wget
     git
     alacritty
+    kitty
     wl-clipboard
     # C tools
     clang
@@ -78,6 +79,7 @@
     cliphist
     nvim-pkg # custom nvim config
     grimblast # hyprland screenshot utility
+    nemo
   ];
   ######################
   ### SYSTEM MODULES ###

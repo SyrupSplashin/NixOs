@@ -12,10 +12,23 @@
       package = pkgs.rose-pine-cursor;
       size = 16;
     };
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+    style = {
+      name = "adwaita-dark";
+    };
   };
   home = {
     sessionVariables = {
       ANKI_WAYLAND = 1;
+      VISUAL = "nvim";
+      EDITOR = "$VISUAL";
     };
     pointerCursor = {
       gtk.enable = true;
@@ -25,7 +38,6 @@
       size = 16;
     };
     packages = with pkgs; [
-
       #applications
       discord
       zip
@@ -57,6 +69,8 @@
       zstd
       gnupg # OpenPGP
       dunst # Notif daemon
+      gnome-themes-extra
+      adwaita-qt
 
       # system tools
       sysstat
@@ -64,7 +78,6 @@
       ethtool
       pciutils # lspci
       usbutils # lsusb
-
     ];
   };
   # User Modules

@@ -7,7 +7,7 @@
         "HDMI-A-1,preferred,auto-left,1,transform,1"
         "Unknown-1,disabled"
       ];
-      "$terminal" = "alacritty";
+      "$terminal" = "kitty";
       "$mainMod" = "SUPER";
       "$menu" = "rofi -show drun";
       env = [
