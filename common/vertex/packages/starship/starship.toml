@@ -1,5 +1,5 @@
 format = """
-[  ](fg:black bg:white)\
+[  ](fg:#313244 bg:#89b4fa)\
 $directory\
 $git_branch\
 $git_commit\
@@ -22,7 +22,7 @@ disabled = false
 
 [directory]
 format = '[$read_only]($read_only_style)[ $path ]($style)'
-style = 'bold fg:white bg:blue'
+style = 'fg:#cdd6f4 bg:#313244'
 read_only_style = 'fg:white bg:blue'
 read_only = ' '
 fish_style_pwd_dir_length = 1
@@ -30,13 +30,13 @@ fish_style_pwd_dir_length = 1
 [time]
 disabled = false
 time_format = " %I:%M %p "
-style = 'bold fg:black bg:white'
+style = 'bold italic fg:black bg:white'
 
 [fill]
 symbol = ' '
 
 [git_branch]
-format = " on [$symbol$branch(:$remote_branch)]($style) "
+format = " 𝘰𝘯 [$symbol$branch(:$remote_branch)]($style) "
 symbol = " "
 style = "bold purple"
 truncation_length = 9223372036854775807
