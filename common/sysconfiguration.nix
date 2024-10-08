@@ -101,6 +101,9 @@
     hyprland = {
       enable = true;
     };
+    ssh = {
+      startAgent = true;
+    };
   };
   ####################
   ### SYSTEM FONTS ###

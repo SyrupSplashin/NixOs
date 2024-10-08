@@ -14,6 +14,7 @@
           set -g @catppuccin_status_left_separator "█"
           set -g @catppuccin_status_right_separator "█"
           set -g @catppuccin_window_current_background "#313244"
+          set -g @catppuccin_pane_active_border_style "fg=#{thm_blue}"
         '';
       }
     ];
