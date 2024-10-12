@@ -13,8 +13,12 @@
   ### BOOTLOADER ###
   ##################
   boot.loader = {
-    systemd-boot.enable = true;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 10;
+    };
     efi.canTouchEfiVariables = true;
+
   };
 
   #####################
@@ -80,6 +84,7 @@
     nvim-pkg # custom nvim config
     grimblast # hyprland screenshot utility
     nemo
+    ntfs3g # For mounting ntfs drives
   ];
   ######################
   ### SYSTEM MODULES ###
