@@ -7,5 +7,6 @@
     ./starship
     ./zsh
     ./tmux
+    ./emacs
   ];
 }

@@ -6,8 +6,8 @@
   ...
 }:
 {
-  nixpkgs.overlays = [
-    inputs.syrupnvim.overlays.default
+  imports = [
+    ./overlays.nix
   ];
   ##################
   ### BOOTLOADER ###
@@ -80,7 +80,7 @@
     clang-tools
     cmake
     zathura
-    cliphist
+    cliphist # Broken currently
     nvim-pkg # custom nvim config
     grimblast # hyprland screenshot utility
     nemo
@@ -122,6 +122,7 @@
           "FiraCode"
         ];
       })
+      noto-fonts
     ];
   };
 

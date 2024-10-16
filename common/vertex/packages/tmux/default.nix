@@ -25,6 +25,7 @@
       set -g default-terminal "tmux-256color"
       set -g status-position top
       setw -g mouse on
+      setw -g mode-keys vi
       set -g status 2
       set -g status-format[1] ""
     '';
