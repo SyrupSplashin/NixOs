@@ -23,8 +23,8 @@ disabled = false
 [directory]
 format = '[$read_only]($read_only_style)[ $path ]($style)'
 style = 'fg:#cdd6f4 bg:#313244'
-read_only_style = 'fg:white bg:blue'
-read_only = ' '
+read_only_style = 'fg:white bg:red'
+read_only = '  '
 fish_style_pwd_dir_length = 1
 
 [time]

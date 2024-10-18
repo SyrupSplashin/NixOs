@@ -72,6 +72,7 @@
       dunst # Notif daemon
       gnome-themes-extra
       adwaita-qt
+      fastfetch # cause meme
 
       # system tools
       sysstat
