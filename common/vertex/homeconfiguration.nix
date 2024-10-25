@@ -58,7 +58,11 @@
       socat # replacement of openbsd-netcat
       nmap # A utility for network discovery and security auditing
       ipcalc # it is a calculator for the IPv4/v6 addresses
+<<<<<<< HEAD
       wavemon # Wireless Interface Monitor
+=======
+      winbox # mikrotik
+>>>>>>> 5adb4b8 (added winbox for gui mikrotik config)
 
       # misc
       file
