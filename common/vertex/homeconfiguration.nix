@@ -2,6 +2,7 @@
 {
   imports = [
     ./packages
+    # ./desktopEntries.nix
   ];
 
   #CursorTheme
