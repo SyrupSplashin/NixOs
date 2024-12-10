@@ -13,6 +13,8 @@
           set -g @catppuccin_window_right_separator "█ "
           set -g @catppuccin_status_left_separator "█"
           set -g @catppuccin_status_right_separator "█"
+          set -g @catppuccin_window_current_background "#313244"
+          set -g @catppuccin_pane_active_border_style "fg=#{thm_blue}"
         '';
       }
     ];
@@ -23,6 +25,7 @@
       set -g default-terminal "tmux-256color"
       set -g status-position top
       setw -g mouse on
+      setw -g mode-keys vi
       set -g status 2
       set -g status-format[1] ""
     '';

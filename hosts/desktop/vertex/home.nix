@@ -28,6 +28,9 @@
 #############################
 # User Packages
   home.packages = with pkgs; [
+    gnuradio
+    qmk
+    jan
   ];
 
 # Desktop User Modules
