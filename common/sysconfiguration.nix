@@ -6,15 +6,19 @@
   ...
 }:
 {
-  nixpkgs.overlays = [
-    inputs.syrupnvim.overlays.default
+  imports = [
+    ./overlays.nix
   ];
   ##################
   ### BOOTLOADER ###
   ##################
   boot.loader = {
-    systemd-boot.enable = true;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 10;
+    };
     efi.canTouchEfiVariables = true;
+
   };
 
   #####################
@@ -76,10 +80,11 @@
     clang-tools
     cmake
     zathura
-    cliphist
+    cliphist # Broken currently
     nvim-pkg # custom nvim config
     grimblast # hyprland screenshot utility
     nemo
+    ntfs3g # For mounting ntfs drives
   ];
   ######################
   ### SYSTEM MODULES ###
@@ -101,6 +106,9 @@
     hyprland = {
       enable = true;
     };
+    ssh = {
+      startAgent = true;
+    };
   };
   ####################
   ### SYSTEM FONTS ###
@@ -114,6 +122,7 @@
           "FiraCode"
         ];
       })
+      noto-fonts
     ];
   };
 

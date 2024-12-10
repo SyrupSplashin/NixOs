@@ -2,6 +2,7 @@
 {
   imports = [
     ./packages
+    # ./desktopEntries.nix
   ];
 
   #CursorTheme
@@ -58,6 +59,8 @@
       socat # replacement of openbsd-netcat
       nmap # A utility for network discovery and security auditing
       ipcalc # it is a calculator for the IPv4/v6 addresses
+      wavemon # Wireless Interface Monitor
+      winbox # mikrotik
 
       # misc
       file
@@ -71,6 +74,7 @@
       dunst # Notif daemon
       gnome-themes-extra
       adwaita-qt
+      fastfetch # cause meme
 
       # system tools
       sysstat

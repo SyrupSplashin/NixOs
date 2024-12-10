@@ -91,10 +91,10 @@
       ];
       binde = [
         # Resize Window HJKL
-        "$mainMod Control, h, resizeactive, -10 0"
-        "$mainMod Control, l, resizeactive, 10 0"
-        "$mainMod Control, k, resizeactive, 0 -10"
-        "$mainMod Control, j, resizeactive, 0 10"
+        "$mainMod Control, h, resizeactive, -25 0"
+        "$mainMod Control, l, resizeactive, 25 0"
+        "$mainMod Control, k, resizeactive, 0 -25"
+        "$mainMod Control, j, resizeactive, 0 25"
       ];
     };
   };
