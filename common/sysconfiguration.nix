@@ -116,12 +116,8 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      (nerdfonts.override {
-        fonts = [
-          "Meslo"
-          "FiraCode"
-        ];
-      })
+      nerd-fonts.fira-code
+      nerd-fonts.meslo-lg
       noto-fonts
     ];
   };
