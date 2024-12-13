@@ -75,6 +75,7 @@
       gnome-themes-extra
       adwaita-qt
       fastfetch # cause meme
+      gimp # FOSS photoshop
 
       # system tools
       sysstat

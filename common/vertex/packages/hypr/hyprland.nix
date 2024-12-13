@@ -40,6 +40,7 @@
         "$mainMod Control, grave, exec, hyprlock"
         "$mainMod Shift, grave, exec, systemctl suspend"
         "$mainMod, F, togglefloating,"
+        "$mainMod Control, F, fullscreen, 1"
         "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
         ", Print, exec, grimblast copy area"
         # Move Focus HJKL
