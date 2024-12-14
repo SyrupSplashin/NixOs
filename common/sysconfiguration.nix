@@ -91,6 +91,7 @@
     nemo
     ntfs3g # For mounting ntfs drives
     imv # image viewer
+    teamviewer
   ];
   ######################
   ### SYSTEM MODULES ###
@@ -111,6 +112,13 @@
     ssh = {
       startAgent = true;
     };
+  };
+
+  ################
+  ### SERVICES ###
+  ################
+  services = {
+    teamviewer.enable = true;
   };
   ####################
   ### SYSTEM FONTS ###
