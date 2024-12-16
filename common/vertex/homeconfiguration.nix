@@ -45,6 +45,9 @@
       xz
       unzip
       anki-bin
+      gimp # FOSS photoshop
+      telegram-desktop
+
       # utils
       ripgrep # recursively searches directories for a regex pattern
       lsd # A modern replacement for ‘ls’
@@ -75,7 +78,6 @@
       gnome-themes-extra
       adwaita-qt
       fastfetch # cause meme
-      gimp # FOSS photoshop
 
       # system tools
       sysstat
