@@ -15,11 +15,29 @@
     ./hardware-configuration-laptop.nix
     ../../common/sysconfiguration.nix
   ];
+
+  ##################
+  ### BOOTLOADER ###
+  ##################
+  boot.loader = {
+    grub = {
+      enable = true;
+      zfsSupport = true;
+      efiSupport = true;
+      efiInstallAsRemovable = true;
+      configurationLimit = 10;
+      mirroredBoots = [
+       { devices = [ "nodev"]; path = "/boot";}
+      ];
+    };
+  };
+
   ##################
   ### NETWORKING ###
   ##################
   networking = {
     hostName = "thinker";
+    hostId = "559df6c4";
     networkmanager.enable = true;
   };
 
@@ -57,6 +75,9 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+    };
+    zfs = {
+      autoScrub.enable = true;
     };
   };
 
