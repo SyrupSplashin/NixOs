@@ -47,6 +47,7 @@
       anki-bin
       gimp # FOSS photoshop
       telegram-desktop
+      mpv
 
       # utils
       ripgrep # recursively searches directories for a regex pattern
