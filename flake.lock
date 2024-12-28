@@ -249,16 +249,15 @@
       "locked": {
         "lastModified": 1733856274,
         "narHash": "sha256-XLNhlKX2fDGZeBmvhEUuvphqi2QhVUul55Fc2gFoVKU=",
-        "ref": "main",
+        "owner": "SyrupSplashin",
+        "repo": "nix.nvim",
         "rev": "a6a3df20a7aa24400d40491d02b4982e7cee00eb",
-        "revCount": 15,
-        "type": "git",
-        "url": "https://github.com/SyrupSplashin/nix.nvim.git"
+        "type": "github"
       },
       "original": {
-        "ref": "main",
-        "type": "git",
-        "url": "https://github.com/SyrupSplashin/nix.nvim.git"
+        "owner": "SyrupSplashin",
+        "repo": "nix.nvim",
+        "type": "github"
       }
     },
     "systems": {

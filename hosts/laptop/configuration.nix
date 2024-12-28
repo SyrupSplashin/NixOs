@@ -11,7 +11,6 @@
 
 {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration-laptop.nix
     ../../common/sysconfiguration.nix
   ];
@@ -27,7 +26,10 @@
       efiInstallAsRemovable = true;
       configurationLimit = 10;
       mirroredBoots = [
-       { devices = [ "nodev"]; path = "/boot";}
+        {
+          devices = [ "nodev" ];
+          path = "/boot";
+        }
       ];
     };
   };
@@ -50,9 +52,8 @@
   ];
 
   # System Modules
-  programs =
-    {
-    };
+  programs = {
+  };
 
   ################
   ### SERVICES ###
