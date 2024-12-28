@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    syrupnvim.url = "git+https://github.com/SyrupSplashin/nix.nvim.git?ref=main";
+    syrupnvim.url = "github:SyrupSplashin/nix.nvim";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -20,6 +20,7 @@
 #    efi.canTouchEfiVariables = true;
 #
 #  };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #####################
   ### TIME / LOCALE ###
@@ -131,6 +132,16 @@
       noto-fonts
     ];
   };
+
+  ####################
+  ### OPTIMIZATION ###
+  ####################
+  nix.gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 1w";
+    };
+  nix.settings.auto-optimise-store = true;
 
   ###########
   ### ETC ###
