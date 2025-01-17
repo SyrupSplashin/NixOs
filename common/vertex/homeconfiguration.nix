@@ -63,6 +63,7 @@
       anki-bin
       gimp # FOSS photoshop
       telegram-desktop
+      obsidian
       mpv
 
     # Utilities

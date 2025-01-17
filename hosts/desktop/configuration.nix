@@ -74,23 +74,11 @@
   ### SERVICES ###
   ################
   services = {
-    printing.enable = true;
-    openssh = {
-      enable = true;
-    };
     xserver = {
-      enable = true;
       videoDrivers = [ "nvidia" ];
-      displayManager.gdm.enable = true;
       xkb = {
         layout = "us";
       };
-    };
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
     };
     blueman = {
       enable = true;

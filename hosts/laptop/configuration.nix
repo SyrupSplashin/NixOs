@@ -59,29 +59,12 @@
   ### SERVICES ###
   ################
   services = {
-    printing.enable = true;
-    openssh = {
-      enable = true;
-    };
     xserver = {
-      enable = true;
-      displayManager.gdm.enable = true;
       xkb = {
-        layout = "us";
         variant = "dvorak";
       };
     };
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-    zfs = {
-      autoScrub.enable = true;
-    };
   };
-
   ###########
   ### ETC ###
   ###########

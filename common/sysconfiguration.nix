@@ -12,14 +12,14 @@
   ##################
   ### BOOTLOADER ###
   ##################
-#  boot.loader = {
-#    systemd-boot = {
-#      enable = true;
-#      configurationLimit = 10;
-#    };
-#    efi.canTouchEfiVariables = true;
-#
-#  };
+  #  boot.loader = {
+  #    systemd-boot = {
+  #      enable = true;
+  #      configurationLimit = 10;
+  #    };
+  #    efi.canTouchEfiVariables = true;
+  #
+  #  };
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #####################
@@ -120,6 +120,26 @@
   ################
   services = {
     teamviewer.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
+    printing.enable = true;
+    openssh = {
+      enable = true;
+    };
+    xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+      xkb = {
+        layout = "us";
+      };
+    };
+    zfs = {
+      autoScrub.enable = true;
+    };
   };
   ####################
   ### SYSTEM FONTS ###
@@ -130,6 +150,7 @@
       nerd-fonts.fira-code
       nerd-fonts.meslo-lg
       noto-fonts
+      corefonts
     ];
   };
 
@@ -137,17 +158,16 @@
   ### OPTIMIZATION ###
   ####################
   nix.gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 1w";
-    };
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
   nix.settings.auto-optimise-store = true;
 
   ###########
   ### ETC ###
   ###########
   system.stateVersion = "24.05";
-  hardware.pulseaudio.enable = false;
   nixpkgs.config.allowUnfree = true;
   security = {
     rtkit.enable = true;
