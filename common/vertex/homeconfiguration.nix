@@ -99,6 +99,7 @@
       gnome-themes-extra
       adwaita-qt
       fastfetch # cause meme
+      rofimoji # rofi-based emoji menu
     ];
   };
 

@@ -86,7 +86,7 @@
     clang-tools
     cmake
     zathura
-    cliphist
+    cliphist # clipboard utility for wayland
     nvim-pkg # custom nvim config
     grimblast # hyprland screenshot utility
     nemo
