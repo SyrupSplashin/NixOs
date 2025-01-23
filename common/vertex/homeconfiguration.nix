@@ -57,12 +57,9 @@
     packages = with pkgs; [
     # Applications
       discord
-      zip
-      xz
-      unzip
+      telegram-desktop
       anki-bin
       gimp # FOSS photoshop
-      telegram-desktop
       obsidian
       mpv
 
@@ -85,6 +82,9 @@
       ethtool
       pciutils # lspci
       usbutils # lsusb
+      zip
+      xz
+      unzip
 
     # Miscellaneous
       file
