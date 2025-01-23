@@ -20,7 +20,7 @@
   #    efi.canTouchEfiVariables = true;
   #
   #  };
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
 
   #####################
   ### TIME / LOCALE ###
@@ -133,6 +133,7 @@
     xserver = {
       enable = true;
       displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
       xkb = {
         layout = "us";
       };
