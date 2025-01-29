@@ -2,7 +2,7 @@
 {
   imports = [
     ./packages
-    # ./desktopEntries.nix
+    ./desktopEntries.nix
   ];
 
   ###################
@@ -57,9 +57,11 @@
     packages = with pkgs; [
     # Applications
       discord
+      vesktop
       telegram-desktop
+      signal-desktop
       anki-bin
-      gimp # FOSS photoshop
+      gimp 
       obsidian
       mpv
 
@@ -102,7 +104,14 @@
       rofimoji # rofi-based emoji menu
     ];
   };
-
+  ####################
+  ### CONFIG FILES ###
+  ####################
+  home.file = {
+    ".config/vesktop/themes/midnight.theme.css" = {
+      source = ./configs/vesktop/midnight.theme.css;
+    };
+  };
   ###############
   ### MODULES ###
   ###############

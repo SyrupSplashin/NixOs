@@ -85,6 +85,7 @@
     clang
     clang-tools
     cmake
+    ###
     zathura
     cliphist # clipboard utility for wayland
     nvim-pkg # custom nvim config
@@ -93,6 +94,7 @@
     ntfs3g # For mounting ntfs drives
     imv # image viewer
     teamviewer
+    nodejs_22
   ];
   ######################
   ### SYSTEM MODULES ###
