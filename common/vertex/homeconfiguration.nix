@@ -66,6 +66,7 @@
       mpv
 
     # Utilities
+      xdg-desktop-portal-hyprland
       ripgrep # recursively searches directories for a regex pattern
       lsd # A modern replacement for ‘ls’
       bat # cat clone with syntax highlighting

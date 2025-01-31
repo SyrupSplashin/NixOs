@@ -76,6 +76,7 @@
   #######################
   environment.systemPackages = with pkgs; [
     alsa-utils # utilities for ALSA
+    easyeffects # pipewire frontend
     playerctl # utility / lib for controlling media
     wget
     git
