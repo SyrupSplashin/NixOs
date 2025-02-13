@@ -112,6 +112,7 @@
     };
     hyprland = {
       enable = true;
+      xwayland.enable = true;
     };
     ssh = {
       startAgent = true;

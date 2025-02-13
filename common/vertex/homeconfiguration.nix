@@ -50,6 +50,7 @@
       ANKI_WAYLAND = 1;
       VISUAL = "nvim";
       EDITOR = "$VISUAL";
+      NIXOS_OZONE_WL=1;
     };
   ################
   ### PACKAGES ###
@@ -63,6 +64,7 @@
       anki-bin
       gimp 
       obsidian
+      anytype
       mpv
 
     # Utilities
@@ -121,6 +123,10 @@
       enable = true;
       userName = "SyrupSplashin";
       userEmail = "vertex@syrupsplash.in";
+      extraConfig = {
+        init.defaultBranch = "main";
+        pull.rebase = false;
+      };
     };
     fzf = {
       enable = true;
