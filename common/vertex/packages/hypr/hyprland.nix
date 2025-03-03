@@ -17,6 +17,7 @@
       windowrulev2 = [
         "noblur, class:^$"
         "float, class:com.github.wwmm.easyeffects"
+        "float, initialTitle:^(Friends List)$"
       ];
       animations = {
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
