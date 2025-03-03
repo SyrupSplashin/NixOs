@@ -50,24 +50,25 @@
       ANKI_WAYLAND = 1;
       VISUAL = "nvim";
       EDITOR = "$VISUAL";
-      NIXOS_OZONE_WL=1;
+      NIXOS_OZONE_WL = 1;
     };
-  ################
-  ### PACKAGES ###
-  ################
+    ################
+    ### PACKAGES ###
+    ################
     packages = with pkgs; [
-    # Applications
+      # Applications
       discord
       vesktop
       telegram-desktop
       signal-desktop
+      youtube-music
       anki-bin
-      gimp 
+      gimp
       obsidian
       anytype
       mpv
 
-    # Utilities
+      # Utilities
       xdg-desktop-portal-hyprland
       ripgrep # recursively searches directories for a regex pattern
       lsd # A modern replacement for ‘ls’
@@ -91,7 +92,7 @@
       xz
       unzip
 
-    # Miscellaneous
+      # Miscellaneous
       file
       which
       tree
@@ -107,6 +108,19 @@
       rofimoji # rofi-based emoji menu
     ];
   };
+  ####################
+  ### DEFAULT APPS ###
+  ####################
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "image/png" = ["imv.desktop"];
+      "image/jpeg" = ["imv.desktop"];
+      "image/gif" = ["imv.desktop"];
+      "image/svg+xml" = ["imv.desktop"];
+    };
+  };
+
   ####################
   ### CONFIG FILES ###
   ####################

@@ -21,5 +21,18 @@
       icon = "vesktop";
       exec = "vesktop --enable-features=UseOzonePlatform --ozone-platform=wayland %U";
     };
+    Anytype = {
+      name = "Anytype";
+      categories = ["Utility" "Office" "ProjectManagement"];
+      genericName = "Notes app";
+      icon = "anytype";
+      exec = "anytype --enable-features=UseOzonePlatform --ozone-platform=wayland";
+    };
+    imv = {
+      name = "imv";
+      categories = ["Graphics" "Viewer"];
+      genericName = "Image viewer";
+      exec = "imv";
+    };
   };
 }
