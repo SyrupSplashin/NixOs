@@ -68,6 +68,9 @@
 
   # Desktop System Modules
   programs = {
+    steam = {
+      enable = true;
+    };
   };
 
   ################
