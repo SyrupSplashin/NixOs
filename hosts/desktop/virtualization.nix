@@ -7,7 +7,10 @@
       enable = true;
       onBoot = "ignore";
       onShutdown = "shutdown";
-      # qemu.runAsRoot = false;
+      qemu = {
+        ovmf.enable = true;
+        swtpm.enable = true;
+      };
     };
     spiceUSBRedirection.enable = true;
   };

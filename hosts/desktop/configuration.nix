@@ -10,6 +10,7 @@
   imports = [
     ./hardware-configuration-desktop.nix
     ../../common/sysconfiguration.nix
+    ./virtualization.nix
   ];
 
   ##################

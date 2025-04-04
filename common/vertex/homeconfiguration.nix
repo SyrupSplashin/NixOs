@@ -106,6 +106,8 @@
       adwaita-qt
       fastfetch # cause meme
       rofimoji # rofi-based emoji menu
+      cbonsai
+      cmatrix
     ];
   };
   ####################
