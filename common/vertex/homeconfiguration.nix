@@ -67,6 +67,7 @@
       obsidian
       anytype
       mpv
+      qbittorrent
 
       # Utilities
       xdg-desktop-portal-hyprland

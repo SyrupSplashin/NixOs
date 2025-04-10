@@ -12,8 +12,11 @@
 # User Packages
   home.packages = with pkgs; [
     gnuradio
-    qmk
-    jan
+    qmk # Keyboard firmware
+    jan # Local LLM
+    pcsx2 # PS2 Emulation
+    lollypop #music Playre
+    streamrip # Music Obtainer
   ];
 
 # Desktop User Modules

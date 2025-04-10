@@ -87,6 +87,7 @@
     clang-tools
     cmake
     ###
+    p7zip #7zip archive tool
     zathura
     cliphist # clipboard utility for wayland
     nvim-pkg # custom nvim config
