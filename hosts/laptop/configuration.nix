@@ -13,6 +13,7 @@
   imports = [
     ./hardware-configuration-laptop.nix
     ../../common/sysconfiguration.nix
+    ./zfs.nix
   ];
 
   ##################
