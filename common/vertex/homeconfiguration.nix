@@ -60,7 +60,7 @@
       discord
       vesktop
       telegram-desktop
-      signal-desktop
+      signal-desktop-bin
       youtube-music
       anki-bin
       gimp
@@ -68,6 +68,7 @@
       anytype
       mpv
       qbittorrent
+      libreoffice-qt
 
       # Utilities
       xdg-desktop-portal-hyprland

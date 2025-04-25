@@ -23,12 +23,6 @@
   programs = {
   };
 
-# Services
-  services.ollama = {
-    enable = true;
-    acceleration = "cuda";
-  };
-
 ###########
 ### ETC ###
 ###########
