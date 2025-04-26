@@ -69,6 +69,7 @@
       mpv
       qbittorrent
       libreoffice-qt
+      protonmail-desktop
 
       # Utilities
       xdg-desktop-portal-hyprland
@@ -103,7 +104,7 @@
       gawk
       zstd
       gnupg # OpenPGP
-      dunst # Notif daemon
+      swaynotificationcenter # notif daemon
       gnome-themes-extra
       adwaita-qt
       fastfetch # cause meme

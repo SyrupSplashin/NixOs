@@ -6,7 +6,7 @@
       exec-once = [
         "hyprpaper"
         "waybar"
-        "dunst"
+        "swaync"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
       ];
