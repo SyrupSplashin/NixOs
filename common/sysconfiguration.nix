@@ -89,7 +89,6 @@
     p7zip #7zip archive tool
     zathura
     cliphist # clipboard utility for wayland
-    nvim-pkg # custom nvim config
     grimblast # hyprland screenshot utility
     nemo
     ntfs3g # For mounting ntfs drives
@@ -101,6 +100,9 @@
   ### SYSTEM MODULES ###
   ######################
   programs = {
+    nixvim = {
+      enable = true;
+    };
     firefox = {
       enable = true;
     };

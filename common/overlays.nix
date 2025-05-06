@@ -6,8 +6,6 @@
 }:
 {
   nixpkgs.overlays = [
-    #Custom neovim overlay
-    inputs.syrupnvim.overlays.default
     # Cliphist overlay to fix build errors
     (final: prev: {
       cliphist = prev.cliphist.overrideAttrs (_old: {
