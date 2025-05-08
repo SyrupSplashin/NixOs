@@ -70,6 +70,7 @@
       qbittorrent
       libreoffice-qt
       protonmail-desktop
+      irssi
 
       # Utilities
       xdg-desktop-portal-hyprland
@@ -94,6 +95,7 @@
       zip
       xz
       unzip
+      dysk # better version of df to fetch disk space utilization
 
       # Miscellaneous
       file
