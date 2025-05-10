@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nixvim = {
     # Dependencies
     # { 'Bilal2453/luvit-meta', lazy = true },
@@ -14,6 +15,9 @@
     # https://nix-community.github.io/nixvim/plugins/fidget/index.html
     plugins.fidget = {
       enable = true;
+      settings = {
+        notification.window.winblend = 0;
+      };
     };
 
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=extraplugi#extraplugins
@@ -69,28 +73,20 @@
       #  - settings: Override the default settings passed when initializing the server.
       #        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       servers = {
-        # clangd = {
-        #   enable = true;
-        # };
-        # gopls = {
-        #   enable = true;
-        # };
-        # pyright = {
-        #   enable = true;
-        # };
-        # rust_analyzer = {
-        #   enable = true;
-        # };
-        # ...etc. See `https://nix-community.github.io/nixvim/plugins/lsp` for a list of pre-configured LSPs
-        #
-        # Some languages (like typscript) have entire language plugins that can be useful:
-        #    `https://nix-community.github.io/nixvim/plugins/typescript-tools/index.html?highlight=typescript-tools#pluginstypescript-toolspackage`
-        #
-        # But for many setups the LSP (`tsserver`) will work just fine
-        # tsserver = {
-        #   enable = true;
-        # };
-
+        clangd = {
+          enable = true;
+        };
+        pyright = {
+          enable = true;
+        };
+        marksman = {
+          enable = true;
+          autostart = true;
+        };
+        nil_ls = {
+          enable = true;
+          autostart = true;
+        };
         lua_ls = {
           enable = true;
 
@@ -195,7 +191,10 @@
           # Execute a code action, usually your cursor needs to be on top of an error
           # or a suggestion from your LSP for this to activate.
           "<leader>ca" = {
-            mode = ["n" "x"];
+            mode = [
+              "n"
+              "x"
+            ];
             action = "code_action";
             desc = "LSP: [C]ode [A]ction";
           };

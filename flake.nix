@@ -58,7 +58,7 @@
               home-manager.users.vertex = {
                 imports = [
                   ./hosts/desktop/vertex/home.nix
-		  nixvim.homeManagerModules.nixvim
+                  nixvim.homeManagerModules.nixvim
                 ];
               };
             }

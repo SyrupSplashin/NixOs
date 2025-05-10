@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nixvim = {
     # Dependencies
     #
@@ -6,6 +7,10 @@
     extraPackages = with pkgs; [
       # Used to format Lua code
       stylua
+      #nix script
+      nixfmt-rfc-style
+      # markdown and others
+      prettierd
     ];
 
     # Autoformat
@@ -27,7 +32,12 @@
           end
         '';
         formatters_by_ft = {
-          lua = ["stylua"];
+          lua = [ "stylua" ];
+          nix = [ "nixfmt" ];
+          markdown = [ "prettierd" ];
+          html = [ "prettierd" ];
+          css = [ "prettierd" ];
+          javascript = [ "prettierd" ];
           # Conform can also run multiple formatters sequentially
           # python = [ "isort "black" ];
           #
