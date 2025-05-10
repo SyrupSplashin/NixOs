@@ -58,6 +58,7 @@
     packages = with pkgs; [
       # Applications
       discord
+      element-desktop
       vesktop
       telegram-desktop
       signal-desktop-bin
@@ -121,10 +122,10 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "image/png" = ["imv.desktop"];
-      "image/jpeg" = ["imv.desktop"];
-      "image/gif" = ["imv.desktop"];
-      "image/svg+xml" = ["imv.desktop"];
+      "image/png" = [ "imv.desktop" ];
+      "image/jpeg" = [ "imv.desktop" ];
+      "image/gif" = [ "imv.desktop" ];
+      "image/svg+xml" = [ "imv.desktop" ];
     };
   };
 
