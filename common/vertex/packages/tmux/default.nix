@@ -1,4 +1,5 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, ... }:
+{
   programs.tmux = {
     enable = true;
     sensibleOnTop = true;
@@ -9,12 +10,20 @@
       {
         plugin = tmuxPlugins.catppuccin;
         extraConfig = ''
-          set -g @catppuccin_status_background "default"
-          set -g @catppuccin_window_right_separator "█ "
+          set -g @catppuccin_status_background "none"
+          #   set -g @catppuccin_window_right_separator "█ "
           set -g @catppuccin_status_left_separator "█"
           set -g @catppuccin_status_right_separator "█"
-          set -g @catppuccin_window_current_background "#313244"
-          set -g @catppuccin_pane_active_border_style "fg=#{thm_blue}"
+          set -g @catppuccin_window_current_number_color "#fab387"
+          set -g @catppuccin_window_number_color "#89b4fa"
+          set -g @catppuccin_window_text_color "#313244"
+          set -g @catppuccin_window_current_text_color "#313244"
+          set -g status-right-length 100
+          set -g status-left-length 100
+          set -g status-left ""
+          set -g status-right "#{E:@catppuccin_status_application}"
+          set -ag status-right "#{E:@catppuccin_status_session}"
+          set -ag status-right "#{E:@catppuccin_status_uptime}"
         '';
       }
     ];

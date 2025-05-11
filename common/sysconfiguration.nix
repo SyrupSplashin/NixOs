@@ -20,7 +20,6 @@
   #    efi.canTouchEfiVariables = true;
   #
   #  };
-  boot.kernelPackages = pkgs.linuxPackages_6_12;
 
   #####################
   ### TIME / LOCALE ###
@@ -76,6 +75,7 @@
   #######################
   environment.systemPackages = with pkgs; [
     alsa-utils # utilities for ALSA
+    easyeffects # pipewire frontend
     playerctl # utility / lib for controlling media
     wget
     git
@@ -85,19 +85,24 @@
     clang
     clang-tools
     cmake
+    ###
+    p7zip #7zip archive tool
     zathura
     cliphist # clipboard utility for wayland
-    nvim-pkg # custom nvim config
     grimblast # hyprland screenshot utility
     nemo
     ntfs3g # For mounting ntfs drives
     imv # image viewer
     teamviewer
+    nodejs_22
   ];
   ######################
   ### SYSTEM MODULES ###
   ######################
   programs = {
+    nixvim = {
+      enable = true;
+    };
     firefox = {
       enable = true;
     };
@@ -109,6 +114,7 @@
     };
     hyprland = {
       enable = true;
+      xwayland.enable = true;
     };
     ssh = {
       startAgent = true;
@@ -127,6 +133,11 @@
       pulse.enable = true;
     };
     printing.enable = true;
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
     openssh = {
       enable = true;
     };

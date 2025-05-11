@@ -8,5 +8,6 @@
     ./zsh
     ./tmux
     ./vscode
+    ./nixvim
   ];
 }

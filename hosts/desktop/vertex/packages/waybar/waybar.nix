@@ -62,7 +62,7 @@
           headphone = "";
           default = ["" "" ""];
         };
-        on-click = "pavucontrol";
+        on-click = "easyeffects";
       };
       "custom/logo" = {
         format = "";

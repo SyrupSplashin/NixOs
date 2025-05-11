@@ -10,8 +10,10 @@
   imports = [
     ./hardware-configuration-desktop.nix
     ../../common/sysconfiguration.nix
+    ./virtualization.nix
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   ##################
   ### BOOTLOADER ###
   ##################
@@ -68,6 +70,9 @@
 
   # Desktop System Modules
   programs = {
+    steam = {
+      enable = true;
+    };
   };
 
   ################
@@ -84,4 +89,5 @@
       enable = true;
     };
   };
+  systemd.services.NetworkManager-wait-online.enable = false;
 }

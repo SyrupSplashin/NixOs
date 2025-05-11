@@ -4,7 +4,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    syrupnvim.url = "github:SyrupSplashin/nix.nvim";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,7 +19,7 @@
       self,
       nixpkgs,
       home-manager,
-      syrupnvim,
+      nixvim,
       ...
     }@inputs:
     {
@@ -28,7 +31,6 @@
           };
           modules = [
             ./hosts/laptop/configuration.nix
-            # Home-Manager Conf
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -48,6 +50,7 @@
           };
           modules = [
             ./hosts/desktop/configuration.nix
+            nixvim.nixosModules.nixvim
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -55,6 +58,7 @@
               home-manager.users.vertex = {
                 imports = [
                   ./hosts/desktop/vertex/home.nix
+                  nixvim.homeManagerModules.nixvim
                 ];
               };
             }

@@ -2,7 +2,7 @@
 {
   imports = [
     ./packages
-    # ./desktopEntries.nix
+    ./desktopEntries.nix
   ];
 
   ###################
@@ -50,20 +50,31 @@
       ANKI_WAYLAND = 1;
       VISUAL = "nvim";
       EDITOR = "$VISUAL";
+      NIXOS_OZONE_WL = 1;
     };
-  ################
-  ### PACKAGES ###
-  ################
+    ################
+    ### PACKAGES ###
+    ################
     packages = with pkgs; [
-    # Applications
+      # Applications
       discord
+      element-desktop
+      vesktop
       telegram-desktop
+      signal-desktop-bin
+      youtube-music
       anki-bin
-      gimp # FOSS photoshop
+      gimp
       obsidian
+      anytype
       mpv
+      qbittorrent
+      libreoffice-qt
+      protonmail-desktop
+      irssi
 
-    # Utilities
+      # Utilities
+      xdg-desktop-portal-hyprland
       ripgrep # recursively searches directories for a regex pattern
       lsd # A modern replacement for ‘ls’
       bat # cat clone with syntax highlighting
@@ -85,8 +96,9 @@
       zip
       xz
       unzip
+      dysk # better version of df to fetch disk space utilization
 
-    # Miscellaneous
+      # Miscellaneous
       file
       which
       tree
@@ -95,14 +107,36 @@
       gawk
       zstd
       gnupg # OpenPGP
-      dunst # Notif daemon
+      swaynotificationcenter # notif daemon
       gnome-themes-extra
       adwaita-qt
       fastfetch # cause meme
       rofimoji # rofi-based emoji menu
+      cbonsai
+      cmatrix
     ];
   };
+  ####################
+  ### DEFAULT APPS ###
+  ####################
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "image/png" = [ "imv.desktop" ];
+      "image/jpeg" = [ "imv.desktop" ];
+      "image/gif" = [ "imv.desktop" ];
+      "image/svg+xml" = [ "imv.desktop" ];
+    };
+  };
 
+  ####################
+  ### CONFIG FILES ###
+  ####################
+  home.file = {
+    ".config/vesktop/themes/midnight.theme.css" = {
+      source = ./configs/vesktop/midnight.theme.css;
+    };
+  };
   ###############
   ### MODULES ###
   ###############
@@ -111,6 +145,10 @@
       enable = true;
       userName = "SyrupSplashin";
       userEmail = "vertex@syrupsplash.in";
+      extraConfig = {
+        init.defaultBranch = "main";
+        pull.rebase = false;
+      };
     };
     fzf = {
       enable = true;
