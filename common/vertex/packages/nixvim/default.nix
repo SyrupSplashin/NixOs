@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   imports = [
     # NOTE: The first thing you will want to do is uncommented on of the three imports below
     # depending on which module you chose to use to install Nixvim.
@@ -22,9 +23,13 @@
     ./plugins/treesitter.nix
     # ./plugins/kickstart/plugins/debug.nix
     ./plugins/kickstart/plugins/indent-blankline.nix
-    # ./plugins/kickstart/plugins/lint.nix
-    # ./plugins/kickstart/plugins/autopairs.nix
-    # ./plugins/kickstart/plugins/neo-tree.nix
+    ./plugins/kickstart/plugins/lint.nix
+    ./plugins/kickstart/plugins/autopairs.nix
+    ./plugins/kickstart/plugins/neo-tree.nix
+
+    # NOTE: Custom plugins
+    ./plugins/custom/plugins/tmux-navigator.nix
+    ./plugins/custom/plugins/qmk.nix
   ];
   programs.nixvim = {
     enable = true;
@@ -227,7 +232,7 @@
       #  Try it with `yap` in normal mode
       #  See `:help vim.highlight.on_yank()`
       {
-        event = ["TextYankPost"];
+        event = [ "TextYankPost" ];
         desc = "Highlight when yanking (copying) text";
         group = "kickstart-highlight-yank";
         callback.__raw = ''
