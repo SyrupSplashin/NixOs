@@ -1,8 +1,14 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  nixvim,
+  ...
+}:
 {
   imports = [
     ./packages
     ./desktopEntries.nix
+    nixvim.homeManagerModules.nixvim
   ];
 
   ###################

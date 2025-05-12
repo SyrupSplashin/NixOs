@@ -3,11 +3,13 @@
   pkgs,
   lib,
   inputs,
+  nixvim,
   ...
 }:
 {
   imports = [
     ./overlays.nix
+    nixvim.nixosModules.nixvim
   ];
   ##################
   ### BOOTLOADER ###
