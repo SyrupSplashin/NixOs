@@ -30,6 +30,7 @@
     # NOTE: Custom plugins
     ./plugins/custom/plugins/tmux-navigator.nix
     ./plugins/custom/plugins/qmk.nix
+    ./plugins/custom/plugins/lualine.nix
   ];
   programs.nixvim = {
     enable = true;
