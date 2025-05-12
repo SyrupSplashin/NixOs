@@ -48,8 +48,6 @@
   home = {
     sessionVariables = {
       ANKI_WAYLAND = 1;
-      VISUAL = "nvim";
-      EDITOR = "$VISUAL";
       NIXOS_OZONE_WL = 1;
     };
     ################

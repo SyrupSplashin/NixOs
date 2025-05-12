@@ -68,7 +68,9 @@
   #### ENV VARIABLES ####
   #######################
   environment.variables = rec {
-    EDITOR = "nvim";
+    VISUAL = "nvim";
+    EDITOR = "$VISUAL";
+    MANPAGER = "nvim +Man!";
   };
   #######################
   ### SYSTEM PACKAGES ###
@@ -86,7 +88,7 @@
     clang-tools
     cmake
     ###
-    p7zip #7zip archive tool
+    p7zip # 7zip archive tool
     zathura
     cliphist # clipboard utility for wayland
     grimblast # hyprland screenshot utility
