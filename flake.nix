@@ -38,7 +38,7 @@
               home-manager.extraSpecialArgs = { inherit nixvim; };
               home-manager.users.vertex = {
                 imports = [
-                  ./hosts/laptop/vertex/home.nix
+                  ./hosts/laptop/users/vertex/home.nix
                 ];
               };
             }
@@ -58,7 +58,7 @@
               home-manager.extraSpecialArgs = { inherit nixvim; };
               home-manager.users.vertex = {
                 imports = [
-                  ./hosts/desktop/vertex/home.nix
+                  ./hosts/desktop/users/vertex/home.nix
                 ];
               };
             }

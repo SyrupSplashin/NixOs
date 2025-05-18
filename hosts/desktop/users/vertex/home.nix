@@ -3,7 +3,7 @@
 {
   imports = [
     ./packages
-    ../../../common/vertex/homeconfiguration.nix
+    ../../../../common/users/vertex/homeconfiguration.nix
   ];
 
   #############################
@@ -16,6 +16,7 @@
     pcsx2 # PS2 Emulation
     lollypop # music Player
     streamrip # Music Obtainer
+    aichat # TUI for LLMs
   ];
 
   # Desktop User Modules

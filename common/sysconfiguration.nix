@@ -10,6 +10,11 @@
   imports = [
     ./overlays.nix
     nixvim.nixosModules.nixvim
+    ./users.nix
+    ./envars.nix
+    ./packages.nix
+    ./modules.nix
+    ./services.nix
   ];
   ##################
   ### BOOTLOADER ###
@@ -55,114 +60,114 @@
   ##################
   ### USER SETUP ###
   ##################
-  users.users = {
-    vertex = {
-      isNormalUser = true;
-      description = "vertex";
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-      ];
-      shell = pkgs.zsh;
-    };
-  };
+  # users.users = {
+  #   vertex = {
+  #     isNormalUser = true;
+  #     description = "vertex";
+  #     extraGroups = [
+  #       "networkmanager"
+  #       "wheel"
+  #     ];
+  #     shell = pkgs.zsh;
+  #   };
+  # };
   #######################
   #### ENV VARIABLES ####
   #######################
-  environment.variables = rec {
-    VISUAL = "nvim";
-    EDITOR = "$VISUAL";
-    MANPAGER = "nvim +Man!";
-  };
+  # environment.variables = rec {
+  #   VISUAL = "nvim";
+  #   EDITOR = "$VISUAL";
+  #   MANPAGER = "nvim +Man!";
+  # };
   #######################
   ### SYSTEM PACKAGES ###
   #######################
-  environment.systemPackages = with pkgs; [
-    alsa-utils # utilities for ALSA
-    easyeffects # pipewire frontend
-    playerctl # utility / lib for controlling media
-    wget
-    git
-    kitty
-    wl-clipboard
-    # C tools
-    clang
-    clang-tools
-    cmake
-    ###
-    p7zip # 7zip archive tool
-    zathura
-    cliphist # clipboard utility for wayland
-    grimblast # hyprland screenshot utility
-    nemo
-    ntfs3g # For mounting ntfs drives
-    imv # image viewer
-    teamviewer
-    nodejs_22
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   alsa-utils # utilities for ALSA
+  #   easyeffects # pipewire frontend
+  #   playerctl # utility / lib for controlling media
+  #   wget
+  #   git
+  #   kitty
+  #   wl-clipboard
+  #   # C tools
+  #   clang
+  #   clang-tools
+  #   cmake
+  #   ###
+  #   p7zip # 7zip archive tool
+  #   zathura
+  #   cliphist # clipboard utility for wayland
+  #   grimblast # hyprland screenshot utility
+  #   nemo
+  #   ntfs3g # For mounting ntfs drives
+  #   imv # image viewer
+  #   teamviewer
+  #   nodejs_22
+  # ];
   ######################
   ### SYSTEM MODULES ###
   ######################
-  programs = {
-    nixvim = {
-      enable = true;
-    };
-    firefox = {
-      enable = true;
-    };
-    git = {
-      enable = true;
-    };
-    zsh = {
-      enable = true;
-    };
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
-    ssh = {
-      startAgent = true;
-    };
-  };
+  # programs = {
+  #   nixvim = {
+  #     enable = true;
+  #   };
+  #   firefox = {
+  #     enable = true;
+  #   };
+  #   git = {
+  #     enable = true;
+  #   };
+  #   zsh = {
+  #     enable = true;
+  #   };
+  #   hyprland = {
+  #     enable = true;
+  #     xwayland.enable = true;
+  #   };
+  #   ssh = {
+  #     startAgent = true;
+  #   };
+  # };
 
   ################
   ### SERVICES ###
   ################
-  services = {
-    teamviewer.enable = true;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-    printing.enable = true;
-    avahi = {
-      enable = true;
-      nssmdns4 = true;
-      openFirewall = true;
-    };
-    openssh = {
-      enable = true;
-    };
-    xserver = {
-      enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
-      xkb = {
-        layout = "us";
-      };
-    };
-    zfs = {
-      autoScrub.enable = true;
-    };
-    resolved = {
-      enable = true;
-    };
-    gnome = {
-      gnome-keyring.enable = true;
-    };
-  };
+  # services = {
+  #   teamviewer.enable = true;
+  #   pipewire = {
+  #     enable = true;
+  #     alsa.enable = true;
+  #     alsa.support32Bit = true;
+  #     pulse.enable = true;
+  #   };
+  #   printing.enable = true;
+  #   avahi = {
+  #     enable = true;
+  #     nssmdns4 = true;
+  #     openFirewall = true;
+  #   };
+  #   openssh = {
+  #     enable = true;
+  #   };
+  #   xserver = {
+  #     enable = true;
+  #     displayManager.gdm.enable = true;
+  #     desktopManager.gnome.enable = true;
+  #     xkb = {
+  #       layout = "us";
+  #     };
+  #   };
+  #   zfs = {
+  #     autoScrub.enable = true;
+  #   };
+  #   resolved = {
+  #     enable = true;
+  #   };
+  #   gnome = {
+  #     gnome-keyring.enable = true;
+  #   };
+  # };
   ####################
   ### SYSTEM FONTS ###
   ####################
