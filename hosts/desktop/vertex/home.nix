@@ -6,25 +6,24 @@
     ../../../common/vertex/homeconfiguration.nix
   ];
 
-#############################
-### DESKTOP USER PROGRAMS ###
-#############################
-# User Packages
+  #############################
+  ### DESKTOP USER PROGRAMS ###
+  #############################
+  # User Packages
   home.packages = with pkgs; [
     gnuradio
     qmk # Keyboard firmware
-    jan # Local LLM
     pcsx2 # PS2 Emulation
-    lollypop #music Playre
+    lollypop # music Player
     streamrip # Music Obtainer
   ];
 
-# Desktop User Modules
+  # Desktop User Modules
   programs = {
   };
 
-###########
-### ETC ###
-###########
+  ###########
+  ### ETC ###
+  ###########
   home.stateVersion = "24.05";
 }
