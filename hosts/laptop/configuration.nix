@@ -13,44 +13,44 @@
   imports = [
     ./hardware-configuration-laptop.nix
     ../../common/sysconfiguration.nix
-    ./zfs.nix
+    ./config
   ];
 
   ##################
   ### BOOTLOADER ###
   ##################
-  boot.loader = {
-    grub = {
-      enable = true;
-      zfsSupport = true;
-      efiSupport = true;
-      efiInstallAsRemovable = true;
-      configurationLimit = 10;
-      mirroredBoots = [
-        {
-          devices = [ "nodev" ];
-          path = "/boot";
-        }
-      ];
-    };
-  };
+  # boot.loader = {
+  #   grub = {
+  #     enable = true;
+  #     zfsSupport = true;
+  #     efiSupport = true;
+  #     efiInstallAsRemovable = true;
+  #     configurationLimit = 10;
+  #     mirroredBoots = [
+  #       {
+  #         devices = [ "nodev" ];
+  #         path = "/boot";
+  #       }
+  #     ];
+  #   };
+  # };
 
   ##################
   ### NETWORKING ###
   ##################
-  networking = {
-    hostName = "thinker";
-    hostId = "559df6c4";
-    networkmanager.enable = true;
-  };
+  # networking = {
+  #   hostName = "thinker";
+  #   hostId = "559df6c4";
+  #   networkmanager.enable = true;
+  # };
 
   ##############################
   ### LAPTOP SYSTEM PROGRAMS ###
   ##############################
   # System Packages
-  environment.systemPackages = with pkgs; [
-    brightnessctl
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   brightnessctl
+  # ];
 
   # System Modules
   programs = {
@@ -59,15 +59,15 @@
   ################
   ### SERVICES ###
   ################
-  services = {
-    xserver = {
-      xkb = {
-        variant = "dvorak";
-      };
-    };
-  };
+  # services = {
+  #   xserver = {
+  #     xkb = {
+  #       variant = "dvorak";
+  #     };
+  #   };
+  # };
   ###########
   ### ETC ###
   ###########
-  console.keyMap = "dvorak";
+  # console.keyMap = "dvorak";
 }

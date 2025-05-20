@@ -10,84 +10,84 @@
   imports = [
     ./hardware-configuration-desktop.nix
     ../../common/sysconfiguration.nix
-    ./virtualization.nix
+    ./config
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   ##################
-  ### BOOTLOADER ###
+  ### bootloader ###
   ##################
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 10;
-    };
-    efi.canTouchEfiVariables = true;
-
-  };
+  # boot.loader = {
+  #   systemd-boot = {
+  #     enable = true;
+  #     configurationLimit = 10;
+  #   };
+  #   efi.canTouchEfiVariables = true;
+  #
+  # };
   ################
   ### HARDWARE ###
   ################
 
-  hardware = {
-    bluetooth = {
-      enable = true;
-      powerOnBoot = true;
-    };
-    graphics = {
-      enable = true;
-    };
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = true;
-      powerManagement.finegrained = false;
-      open = false;
-      nvidiaSettings = true;
-    };
-    logitech.wireless = {
-      enable = true;
-      enableGraphical = true;
-    };
-  };
+  # hardware = {
+  #   bluetooth = {
+  #     enable = true;
+  #     powerOnBoot = true;
+  #   };
+  #   graphics = {
+  #     enable = true;
+  #   };
+  #   nvidia = {
+  #     modesetting.enable = true;
+  #     powerManagement.enable = true;
+  #     powerManagement.finegrained = false;
+  #     open = false;
+  #     nvidiaSettings = true;
+  #   };
+  #   logitech.wireless = {
+  #     enable = true;
+  #     enableGraphical = true;
+  #   };
+  # };
 
   ##################
   ### NETWORKING ###
   ##################
-  networking = {
-    hostName = "octopamine";
-    networkmanager.enable = true;
-  };
+  # networking = {
+  #   hostName = "octopamine";
+  #   networkmanager.enable = true;
+  # };
 
   ########################
   ### DESKTOP PROGRAMS ###
   ########################
   # System Packages
-  environment.systemPackages = with pkgs; [
-    solaar # Manager for logitech devices
-    logitech-udev-rules # Added bit to make solaar work
-    cudatoolkit # Dep for AI tools
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   solaar # Manager for logitech devices
+  #   logitech-udev-rules # Added bit to make solaar work
+  #   cudatoolkit # Dep for AI tools
+  # ];
 
   # Desktop System Modules
-  programs = {
-    steam = {
-      enable = true;
-    };
-  };
+  # programs = {
+  #   steam = {
+  #     enable = true;
+  #   };
+  # };
 
   ################
   ### SERVICES ###
   ################
-  services = {
-    xserver = {
-      videoDrivers = [ "nvidia" ];
-      xkb = {
-        layout = "us";
-      };
-    };
-    blueman = {
-      enable = true;
-    };
-  };
-  systemd.services.NetworkManager-wait-online.enable = false;
+  # services = {
+  #   xserver = {
+  #     videoDrivers = [ "nvidia" ];
+  #     xkb = {
+  #       layout = "us";
+  #     };
+  #   };
+  #   blueman = {
+  #     enable = true;
+  #   };
+  # };
+  # systemd.services.NetworkManager-wait-online.enable = false;
 }

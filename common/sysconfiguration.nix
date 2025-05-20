@@ -1,20 +1,11 @@
 {
-  config,
-  pkgs,
-  lib,
-  inputs,
   nixvim,
   ...
 }:
 {
   imports = [
-    ./overlays.nix
     nixvim.nixosModules.nixvim
-    ./users.nix
-    ./envars.nix
-    ./packages.nix
-    ./modules.nix
-    ./services.nix
+    ./config/default.nix
   ];
   ##################
   ### BOOTLOADER ###
@@ -32,22 +23,22 @@
   ### TIME / LOCALE ###
   #####################
   # Timezone
-  time.timeZone = "America/New_York";
-
-  # Internationalisation properties
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
+  # time.timeZone = "America/New_York";
+  #
+  # # Internationalisation properties
+  # i18n.defaultLocale = "en_US.UTF-8";
+  #
+  # i18n.extraLocaleSettings = {
+  #   LC_ADDRESS = "en_US.UTF-8";
+  #   LC_IDENTIFICATION = "en_US.UTF-8";
+  #   LC_MEASUREMENT = "en_US.UTF-8";
+  #   LC_MONETARY = "en_US.UTF-8";
+  #   LC_NAME = "en_US.UTF-8";
+  #   LC_NUMERIC = "en_US.UTF-8";
+  #   LC_PAPER = "en_US.UTF-8";
+  #   LC_TELEPHONE = "en_US.UTF-8";
+  #   LC_TIME = "en_US.UTF-8";
+  # };
 
   #############################
   ### EXPERIMENTAL FEATURES ###
@@ -171,25 +162,25 @@
   ####################
   ### SYSTEM FONTS ###
   ####################
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      nerd-fonts.fira-code
-      nerd-fonts.meslo-lg
-      noto-fonts
-      corefonts
-    ];
-  };
+  # fonts = {
+  #   enableDefaultPackages = true;
+  #   packages = with pkgs; [
+  #     nerd-fonts.fira-code
+  #     nerd-fonts.meslo-lg
+  #     noto-fonts
+  #     corefonts
+  #   ];
+  # };
 
   ####################
   ### OPTIMIZATION ###
   ####################
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-  nix.settings.auto-optimise-store = true;
+  # nix.gc = {
+  #   automatic = true;
+  #   dates = "weekly";
+  #   options = "--delete-older-than 7d";
+  # };
+  # nix.settings.auto-optimise-store = true;
 
   ###########
   ### ETC ###
