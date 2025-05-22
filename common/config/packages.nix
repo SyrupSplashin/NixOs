@@ -22,5 +22,7 @@
     imv # image viewer
     teamviewer
     nodejs_22
+    ms-sys # Microsoft compatible boot records
+    cdrkit
   ];
 }
