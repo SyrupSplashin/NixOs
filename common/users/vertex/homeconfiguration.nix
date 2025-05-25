@@ -137,9 +137,6 @@
   ### CONFIG FILES ###
   ####################
   home.file = {
-    ".config/vesktop/themes/midnight.theme.css" = {
-      source = ./configs/vesktop/midnight.theme.css;
-    };
   };
   ###############
   ### MODULES ###
