@@ -9,5 +9,6 @@
     ./locale.nix
     ./fonts.nix
     ./optimization.nix
+    ./ntp.nix
   ];
 }
