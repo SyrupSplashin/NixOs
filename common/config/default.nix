@@ -10,5 +10,7 @@
     ./fonts.nix
     ./optimization.nix
     ./ntp.nix
+    ./network.nix
+    ./auth.nix
   ];
 }

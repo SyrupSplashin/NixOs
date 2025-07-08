@@ -17,7 +17,7 @@
       xwayland.enable = true;
     };
     ssh = {
-      startAgent = true;
+      # startAgent = true;
     };
     adb = {
       enable = true;
