@@ -31,6 +31,7 @@
     ./plugins/custom/plugins/tmux-navigator.nix
     ./plugins/custom/plugins/qmk.nix
     ./plugins/custom/plugins/lualine.nix
+    ./plugins/custom/plugins/obsidian.nix
   ];
   programs.nixvim = {
     enable = true;
@@ -79,6 +80,9 @@
       # You can also add relative line numbers, to help with jumping.
       #  Experiment for yourself to see if you like it!
       relativenumber = true;
+
+      # Conceal Level
+      conceallevel = 2;
 
       # Enable mouse mode, can be useful for resizing splits for example!
       mouse = "a";
