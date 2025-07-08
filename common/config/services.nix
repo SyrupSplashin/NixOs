@@ -16,19 +16,30 @@
     openssh = {
       enable = true;
     };
+    gnome = {
+      # gcr-ssh-agent.enable = false;
+    };
     xserver = {
       enable = true;
-      displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
       xkb = {
         layout = "us";
       };
+    };
+    displayManager = {
+      gdm.enable = true;
+    };
+    desktopManager = {
+      gnome.enable = true;
     };
     zfs = {
       autoScrub.enable = true;
     };
     resolved = {
       enable = true;
+    };
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "client";
     };
     gnome = {
       gnome-keyring.enable = true;
