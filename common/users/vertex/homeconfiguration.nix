@@ -21,6 +21,13 @@
   ######################
   ### THEME SETTINGS ###
   ######################
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+    config.common.default = "gtk";
+  };
   gtk = {
     enable = true;
     cursorTheme = {
@@ -31,6 +38,12 @@
     theme = {
       name = "Adwaita-dark";
       package = pkgs.gnome-themes-extra;
+    };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
     };
   };
   qt = {
@@ -55,6 +68,7 @@
     sessionVariables = {
       ANKI_WAYLAND = 1;
       NIXOS_OZONE_WL = 1;
+      GTK_THEME = "Adwaita-dark";
     };
     ################
     ### PACKAGES ###
