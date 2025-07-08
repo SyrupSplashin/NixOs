@@ -1,4 +1,5 @@
-{config, pkgs, ...}: {
+{ config, pkgs, ... }:
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -9,6 +10,7 @@
       vim = "nvim";
       ip = "ip -c";
       cat = "bat";
+      weather = "curl wttr.in";
     };
     initContent = ''
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -19,7 +21,7 @@
       fi
     '';
     plugins = [
-      { 
+      {
         name = "zsh-syntax-highlighting";
         src = pkgs.zsh-syntax-highlighting;
       }
