@@ -8,7 +8,6 @@
   imports = [
     ./packages
     ./desktopEntries.nix
-    ./configs/auth/userAuth.nix
     nixvim.homeManagerModules.nixvim
   ];
 
