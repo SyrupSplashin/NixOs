@@ -25,3 +25,6 @@
     enableSSHSupport = true;
   };
 }
+# nix-shell -p pam_u2f
+# pamu2fcfg > ~/.config/Yubico/u2f_keys
+# add another yubikey (optional): pamu2fcfg -n >> ~/.config/Yubico/u2f_keys
