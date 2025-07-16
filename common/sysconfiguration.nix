@@ -7,189 +7,22 @@
     nixvim.nixosModules.nixvim
     ./config/default.nix
   ];
-  ##################
-  ### BOOTLOADER ###
-  ##################
-  #  boot.loader = {
-  #    systemd-boot = {
-  #      enable = true;
-  #      configurationLimit = 10;
-  #    };
-  #    efi.canTouchEfiVariables = true;
-  #
-  #  };
-
-  #####################
-  ### TIME / LOCALE ###
-  #####################
-  # Timezone
-  # time.timeZone = "America/New_York";
-  #
-  # # Internationalisation properties
-  # i18n.defaultLocale = "en_US.UTF-8";
-  #
-  # i18n.extraLocaleSettings = {
-  #   LC_ADDRESS = "en_US.UTF-8";
-  #   LC_IDENTIFICATION = "en_US.UTF-8";
-  #   LC_MEASUREMENT = "en_US.UTF-8";
-  #   LC_MONETARY = "en_US.UTF-8";
-  #   LC_NAME = "en_US.UTF-8";
-  #   LC_NUMERIC = "en_US.UTF-8";
-  #   LC_PAPER = "en_US.UTF-8";
-  #   LC_TELEPHONE = "en_US.UTF-8";
-  #   LC_TIME = "en_US.UTF-8";
-  # };
-
-  #############################
-  ### EXPERIMENTAL FEATURES ###
-  #############################
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  ##################
-  ### USER SETUP ###
-  ##################
-  # users.users = {
-  #   vertex = {
-  #     isNormalUser = true;
-  #     description = "vertex";
-  #     extraGroups = [
-  #       "networkmanager"
-  #       "wheel"
-  #     ];
-  #     shell = pkgs.zsh;
-  #   };
-  # };
-  #######################
-  #### ENV VARIABLES ####
-  #######################
-  # environment.variables = rec {
-  #   VISUAL = "nvim";
-  #   EDITOR = "$VISUAL";
-  #   MANPAGER = "nvim +Man!";
-  # };
-  #######################
-  ### SYSTEM PACKAGES ###
-  #######################
-  # environment.systemPackages = with pkgs; [
-  #   alsa-utils # utilities for ALSA
-  #   easyeffects # pipewire frontend
-  #   playerctl # utility / lib for controlling media
-  #   wget
-  #   git
-  #   kitty
-  #   wl-clipboard
-  #   # C tools
-  #   clang
-  #   clang-tools
-  #   cmake
-  #   ###
-  #   p7zip # 7zip archive tool
-  #   zathura
-  #   cliphist # clipboard utility for wayland
-  #   grimblast # hyprland screenshot utility
-  #   nemo
-  #   ntfs3g # For mounting ntfs drives
-  #   imv # image viewer
-  #   teamviewer
-  #   nodejs_22
+  # #############################
+  # ### EXPERIMENTAL FEATURES ###
+  # #############################
+  # nix.settings.experimental-features = [
+  #   "nix-command"
+  #   "flakes"
   # ];
-  ######################
-  ### SYSTEM MODULES ###
-  ######################
-  # programs = {
-  #   nixvim = {
-  #     enable = true;
-  #   };
-  #   firefox = {
-  #     enable = true;
-  #   };
-  #   git = {
-  #     enable = true;
-  #   };
-  #   zsh = {
-  #     enable = true;
-  #   };
-  #   hyprland = {
-  #     enable = true;
-  #     xwayland.enable = true;
-  #   };
-  #   ssh = {
-  #     startAgent = true;
-  #   };
+  #
+  # ###########
+  # ### ETC ###
+  # ###########
+  # system.stateVersion = "24.05";
+  # nixpkgs.config.allowUnfree = true;
+  # security = {
+  #   rtkit.enable = true;
+  #   polkit.enable = true;
+  #   pam.services.hyprlock = { };
   # };
-
-  ################
-  ### SERVICES ###
-  ################
-  # services = {
-  #   teamviewer.enable = true;
-  #   pipewire = {
-  #     enable = true;
-  #     alsa.enable = true;
-  #     alsa.support32Bit = true;
-  #     pulse.enable = true;
-  #   };
-  #   printing.enable = true;
-  #   avahi = {
-  #     enable = true;
-  #     nssmdns4 = true;
-  #     openFirewall = true;
-  #   };
-  #   openssh = {
-  #     enable = true;
-  #   };
-  #   xserver = {
-  #     enable = true;
-  #     displayManager.gdm.enable = true;
-  #     desktopManager.gnome.enable = true;
-  #     xkb = {
-  #       layout = "us";
-  #     };
-  #   };
-  #   zfs = {
-  #     autoScrub.enable = true;
-  #   };
-  #   resolved = {
-  #     enable = true;
-  #   };
-  #   gnome = {
-  #     gnome-keyring.enable = true;
-  #   };
-  # };
-  ####################
-  ### SYSTEM FONTS ###
-  ####################
-  # fonts = {
-  #   enableDefaultPackages = true;
-  #   packages = with pkgs; [
-  #     nerd-fonts.fira-code
-  #     nerd-fonts.meslo-lg
-  #     noto-fonts
-  #     corefonts
-  #   ];
-  # };
-
-  ####################
-  ### OPTIMIZATION ###
-  ####################
-  # nix.gc = {
-  #   automatic = true;
-  #   dates = "weekly";
-  #   options = "--delete-older-than 7d";
-  # };
-  # nix.settings.auto-optimise-store = true;
-
-  ###########
-  ### ETC ###
-  ###########
-  system.stateVersion = "24.05";
-  nixpkgs.config.allowUnfree = true;
-  security = {
-    rtkit.enable = true;
-    polkit.enable = true;
-    pam.services.hyprlock = { };
-  };
 }

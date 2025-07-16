@@ -12,5 +12,6 @@
     ./ntp.nix
     ./network.nix
     ./auth.nix
+    ./etcetera.nix
   ];
 }
