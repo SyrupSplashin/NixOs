@@ -20,7 +20,7 @@
     nemo
     ntfs3g # For mounting ntfs drives
     imv # image viewer
-    teamviewer
+    rustdesk
     nodejs_22
     ms-sys # Microsoft compatible boot records
     cdrkit
