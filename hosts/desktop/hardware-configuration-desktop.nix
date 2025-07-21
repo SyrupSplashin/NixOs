@@ -35,6 +35,7 @@
       allowDiscards = true;
       crypttabExtraOpts = [
         "fido2-device=auto"
+        "timeout=10"
       ];
     };
   };
