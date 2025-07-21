@@ -24,5 +24,7 @@
     nodejs_22
     ms-sys # Microsoft compatible boot records
     cdrkit
+    exfat # filesystem
+    exfatprogs # exfat utils
   ];
 }
