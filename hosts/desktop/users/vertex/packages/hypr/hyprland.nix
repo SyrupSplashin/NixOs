@@ -16,6 +16,10 @@
         "GBM_BACKEND,nvidia-drm"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
         "NVD_BACKEND,direct"
+        # theme stuff
+        "GTK_THEME,Adwaita:dark"
+        "QT_QPA_PLATFORMTHEME,gtk3"
+        "QT_STYLE_OVERRIDE,adwaita-dark"
       ];
       general = {
         gaps_in = 15;
