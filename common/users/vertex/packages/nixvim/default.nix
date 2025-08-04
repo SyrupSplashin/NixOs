@@ -32,6 +32,7 @@
     ./plugins/custom/plugins/qmk.nix
     ./plugins/custom/plugins/lualine.nix
     ./plugins/custom/plugins/obsidian.nix
+    ./plugins/custom/plugins/render-markdown.nix
   ];
   programs.nixvim = {
     enable = true;

@@ -6,6 +6,7 @@
       "image/jpeg" = [ "imv.desktop" ];
       "image/gif" = [ "imv.desktop" ];
       "image/svg+xml" = [ "imv.desktop" ];
+      "x-scheme-handler/obsidian" = [ "obsidian-url-handler.desktop" ];
     };
   };
 }

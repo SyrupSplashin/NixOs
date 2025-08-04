@@ -7,5 +7,7 @@
     ./packages.nix
     ./services.nix
     ./virtualization.nix
+    ./samba.nix
+    ./users.nix
   ];
 }
