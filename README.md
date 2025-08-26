@@ -6,7 +6,7 @@ This repository contains my personal NixOS configuration files, built on NixOS's
 
 ### Branch Structure
 
-- **unable** - Stable production configuration to be used as a restore point on existing systems or a starting point on new systems.
+- **unstable** - Stable production configuration to be used as a restore point on existing systems or a starting point on new systems.
 - **unstable-dev** - Development branch where I test changes and verify stability before merging to prod, this is what I run day-to-day on my systems.
 
 ### File Structure
