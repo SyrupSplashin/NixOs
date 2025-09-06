@@ -10,7 +10,8 @@
         shell = "/run/current-system/sw/bin/nologin";
       };
       vertex = {
-        group = "samba-users";
+        group = "users";
+        extraGroups = [ "samba-users" ];
       };
     };
   };
