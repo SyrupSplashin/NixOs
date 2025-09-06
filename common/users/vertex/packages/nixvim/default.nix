@@ -138,6 +138,9 @@
 
       # See `:help hlsearch`
       hlsearch = true;
+
+      # To fix warning from obsidian.nvim
+      # legacy_commands = false;
     };
 
     # [[ Basic Keymaps ]]

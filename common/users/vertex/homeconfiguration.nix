@@ -6,6 +6,6 @@
   imports = [
     ./packages
     ./config
-    nixvim.homeManagerModules.nixvim
+    nixvim.homeModules.nixvim
   ];
 }
