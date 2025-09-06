@@ -12,6 +12,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stormy = {
+      url = "github:ashish0kumar/stormy";
+    };
   };
 
   outputs =
@@ -20,6 +23,7 @@
       nixpkgs,
       home-manager,
       nixvim,
+      stormy,
       ...
     }@inputs:
     {
@@ -27,7 +31,7 @@
         thinker = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {
-            inherit inputs nixvim;
+            inherit inputs nixvim stormy;
           };
           modules = [
             ./hosts/laptop/configuration.nix
@@ -47,7 +51,7 @@
         octopamine = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {
-            inherit inputs nixvim;
+            inherit inputs nixvim stormy;
           };
           modules = [
             ./hosts/desktop/configuration.nix
