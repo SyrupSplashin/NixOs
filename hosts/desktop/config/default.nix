@@ -9,5 +9,6 @@
     ./virtualization.nix
     ./samba.nix
     ./users.nix
+    ./gaming.nix
   ];
 }
