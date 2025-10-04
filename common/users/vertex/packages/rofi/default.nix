@@ -1,6 +1,7 @@
-{ config, pkgs, ...}: {
+{ config, pkgs, ... }:
+{
   programs.rofi = {
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
     enable = true;
     theme = "${./squared-nord.rasi}";
     extraConfig = {
