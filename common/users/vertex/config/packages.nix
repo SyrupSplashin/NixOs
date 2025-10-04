@@ -60,7 +60,7 @@
     nmap # network exploration and security auditing
     ipcalc # ip subnet calculator for network planning
     wavemon # wireless network monitoring in terminal
-    winbox4 # mikrotik router configuration tool
+    winbox # mikrotik router configuration tool
     protonvpn-gui # ProtonVPN Graphical Client
 
     # Download & Transfer
