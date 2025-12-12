@@ -61,6 +61,11 @@
     fsType = "ext4";
   };
 
+  fileSystems."/mnt/secondary" = {
+    device = "/dev/disk/by-label/Media";
+    fsType = "ntfs3";
+  };
+
   swapDevices = [
     { device = "/dev/disk/by-label/NixSwap"; }
   ];
