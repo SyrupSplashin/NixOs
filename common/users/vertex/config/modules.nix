@@ -2,9 +2,11 @@
   programs = {
     git = {
       enable = true;
-      userName = "SyrupSplashin";
-      userEmail = "vertex@syrupsplash.in";
-      extraConfig = {
+      settings = {
+        user = {
+          name = "SyrupSplashin";
+          email = "vertex@syrupsplash.in";
+        };
         init.defaultBranch = "main";
         pull.rebase = false;
       };
