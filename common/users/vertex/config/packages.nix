@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     # Communication & Social
     discord # voice and text chat for communities
-    element-desktop # matrix protocol client for secure messaging
     telegram-desktop # cross-platform messaging with cloud sync
     signal-desktop-bin # privacy-focused encrypted messaging
     protonmail-desktop # encrypted email client
@@ -62,9 +61,11 @@
     wavemon # wireless network monitoring in terminal
     winbox # mikrotik router configuration tool
     protonvpn-gui # ProtonVPN Graphical Client
+    zenmap # nmap GUI/frontend
 
     # Download & Transfer
     aria2 # multi-connection download accelerator
+    filezilla # ftp client
 
     # Security & Encryption
     gnupg # openpgp encryption and signing tools
@@ -78,5 +79,6 @@
     rofimoji # emoji picker for rofi launcher
     cbonsai # grow bonsai trees in your terminal
     cmatrix # matrix digital rain terminal screensaver
+    qgis # FOSS Geographic Information System
   ];
 }
