@@ -7,9 +7,9 @@
 
       filesystem = {
         window = {
-          mappings = {
-            "\\" = "close_window";
-          };
+          # mappings = {
+          #   "\\" = "close_window";
+          # };
         };
       };
     };
