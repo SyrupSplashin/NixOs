@@ -8,7 +8,7 @@
       onBoot = "ignore";
       onShutdown = "shutdown";
       qemu = {
-        ovmf.enable = true;
+        # ovmf.enable = true;
         swtpm.enable = true;
       };
     };
