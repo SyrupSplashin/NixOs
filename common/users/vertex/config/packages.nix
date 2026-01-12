@@ -74,6 +74,7 @@
     file # determine file types
     which # locate commands in path
     tree # display directory structure as tree
+    keymapp # Firmware flasher for ZSA
 
     # Fun & Miscellaneous
     rofimoji # emoji picker for rofi launcher
