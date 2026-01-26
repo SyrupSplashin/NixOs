@@ -1,5 +1,5 @@
 {
   hardware = {
-    xone.enable = true;
+    # xone.enable = true;
   };
 }

@@ -6,6 +6,6 @@
     };
   };
   environment.systemPackages = with pkgs; [
-    retroarch-full
+    # retroarch-full
   ];
 }
