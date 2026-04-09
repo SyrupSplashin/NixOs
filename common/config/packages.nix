@@ -20,6 +20,7 @@
     clang-tools
     cmake
     nodejs_22
+    android-tools
 
     # Archive & Compression
     p7zip # 7zip archive tool

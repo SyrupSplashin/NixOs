@@ -19,8 +19,5 @@
     ssh = {
       # startAgent = true;
     };
-    adb = {
-      enable = true;
-    };
   };
 }
