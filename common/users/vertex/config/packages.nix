@@ -4,8 +4,9 @@
     # Communication & Social
     discord # voice and text chat for communities
     telegram-desktop # cross-platform messaging with cloud sync
-    signal-desktop-bin # privacy-focused encrypted messaging
+    signal-desktop # privacy-focused encrypted messaging
     protonmail-desktop # encrypted email client
+    element-desktop # Matrix Client
     irssi # terminal-based IRC client
 
     # Media & Entertainment
