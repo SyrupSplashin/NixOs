@@ -11,14 +11,14 @@
         "wl-paste --type image --watch cliphist store"
       ];
       layerrule = [
-        "blur,rofi"
-        "blur,waybar"
+        "blur on, match:namespace rofi"
+        "blur on, match:namespace waybar"
       ];
-      windowrulev2 = [
-        "noblur, class:^$"
-        "float, class:com.github.wwmm.easyeffects"
-        "float, initialTitle:^(Friends List)$"
-        # "fullscreen, class:fcadefbneo.exe"
+      windowrule = [
+        "match:class ^$, no_blur on"
+        "match:class com.github.wwmm.easyeffects, float on"
+        "match:initial_title ^(Friends list)$, float on"
+        "match:class fcadefbneo.exe, fullscreen on"
       ];
       animations = {
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
