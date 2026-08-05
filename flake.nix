@@ -28,13 +28,13 @@
     }@inputs:
     {
       nixosConfigurations = {
-        thinker = nixpkgs.lib.nixosSystem {
+        thinker = nixpkgs.lib.nixosSystem { # Thinkpad T480S
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs nixvim stormy;
           };
           modules = [
-            ./hosts/laptop/configuration.nix
+            ./hosts/thinker/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -42,19 +42,19 @@
               home-manager.extraSpecialArgs = { inherit nixvim; };
               home-manager.users.vertex = {
                 imports = [
-                  ./hosts/laptop/users/vertex/home.nix
+                  ./hosts/thinker/users/vertex/home.nix
                 ];
               };
             }
           ];
         };
-        octopamine = nixpkgs.lib.nixosSystem {
+        octopamine = nixpkgs.lib.nixosSystem { # Home Desktop
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs nixvim stormy;
           };
           modules = [
-            ./hosts/desktop/configuration.nix
+            ./hosts/octopamine/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -62,7 +62,47 @@
               home-manager.extraSpecialArgs = { inherit nixvim; };
               home-manager.users.vertex = {
                 imports = [
-                  ./hosts/desktop/users/vertex/home.nix
+                  ./hosts/octopamine/users/vertex/home.nix
+                ];
+              };
+            }
+          ];
+        };
+        graviton = nixpkgs.lib.nixosSystem { # Dell Latitude
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs nixvim stormy;
+          };
+          modules = [
+            ./hosts/graviton/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit nixvim; };
+              home-manager.users.vertex = {
+                imports = [
+                  ./hosts/neuronix/users/vertex/home.nix
+                ];
+              };
+            }
+          ];
+        };
+        neuronix = nixpkgs.lib.nixosSystem { # Thinpad E15 G4
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs nixvim stormy;
+          };
+          modules = [
+            ./hosts/neuronix/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit nixvim; };
+              home-manager.users.vertex = {
+                imports = [
+                  ./hosts/graviton/users/vertex/home.nix
                 ];
               };
             }

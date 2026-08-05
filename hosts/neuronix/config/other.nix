@@ -1,0 +1,3 @@
+{
+  console.keyMap = "dvorak";
+}
